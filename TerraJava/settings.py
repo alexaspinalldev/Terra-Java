@@ -27,7 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-alexaspinalld-terrajava-fqe8j3zzqjf.ws.codeinstitute-ide.net',
-    '.heroku.app'
+    '.herokuapp.com'
 ]
 
 
