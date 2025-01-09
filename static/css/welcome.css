@@ -1,0 +1,16 @@
+h1 {
+    color: blue;
+    font-style: italic;
+}
+
+#welcome-bg {
+    position: relative;
+}
+
+#videoOverlay {
+    position: absolute;
+}
+
+.btn {
+    background-color: orange;
+}
