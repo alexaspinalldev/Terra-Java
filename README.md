@@ -1,131 +1,161 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Terra Java
 
-Welcome USER_NAME,
+## Overview
+Terra Java is a unique catalogue of all the world's finest coffee blends. Taking itss name from the rich coffee fields found on the island of Java in western Indonesia, it aims to showcase the very best coffees from around the globe.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Vendors are able to register themselves on the site and upload, edit and delete their coffees.
+Visitors can filter the coffees by attibutes - region, bitterness, bean (Arabica, Robusta, Liberica, and Excelsa)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
 
-## Gitpod Reminders
+## UX Design Process
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Graphic design and visual assets:
+[Colour pallate:](https://coolors.co/432818-34623f-ffee7d-c1b098-ffffff)
 
-`python3 -m http.server`
+<img>LOGO IMAGE HERE</img>
 
-A blue button should appear to click: _Make Public_,
+The default coffee image is by <a href="https://unsplash.com/@wojtekpaczes?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Wojciech Pacześ</a> on <a href="https://unsplash.com/photos/a-pile-of-coffee-beans-sitting-next-to-each-other-lFJzbKZZ_NU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-Another blue button should appear to click: _Open Browser_.
+The landing page image is by <a href="https://unsplash.com/@projetocafegatomourisco?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">PROJETO CAFÉ GATO-MOURISCO</a> on <a href="https://unsplash.com/photos/a-lush-green-hillside-covered-in-lots-of-trees-zOVRgigQMQA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+### User flow
+  - [User flow and ERD document](https://miro.com/app/board/uXjVLwAu9aQ=/)
 
-A blue button should appear to click: _Make Public_,
+### User stories and Project board
+  - [Add a link to the GitHub Projects kanban board.]
 
-Another blue button should appear to click: _Open Browser_.
+ <table border="1">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User Story</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Landing Page</td>
+      <td>As a visitor, I want to see a landing page when I open the site so that I know what the site is about and can navigate to its features.</td>
+    </tr>
+    <tr>
+      <td>Catalogue Button</td>
+      <td>As a visitor, I want to see a button on the landing page that takes me to the catalogue so that I can browse the available coffees.</td>
+    </tr>
+    <tr>
+      <td>Coffee Grid</td>
+      <td>As a visitor, I want to see a list of coffees displayed in a paginated grid format so that I can browse the available products easily.</td>
+    </tr>
+    <tr>
+      <td>Filter Coffees</td>
+      <td>As a visitor, I want to filter the displayed coffees by product attributes (e.g., roast level, origin, price) so that I can find coffees that match my preferences.</td>
+    </tr>
+    <tr>
+      <td>Coffee Details</td>
+      <td>As a visitor, I want to click on a coffee product and see a detailed product page so that I can learn more about the coffee, including descriptions and attributes.</td>
+    </tr>
+    <tr>
+      <td>Vendor Registration</td>
+      <td>As a vendor, I want to register for an account from the site’s front-end so that I can manage my products.</td>
+    </tr>
+    <tr>
+      <td>Vendor Login</td>
+      <td>As a vendor, I want to log in to my account so that I can access my vendor dashboard.</td>
+    </tr>
+    <tr>
+      <td>Adding Products</td>
+      <td>As a vendor, I want to add new products to the catalogue so that customers can see and purchase my products.</td>
+    </tr>
+    <tr>
+      <td>Editing Products</td>
+      <td>As a vendor, I want to edit the details of my existing products so that I can keep product information up to date.</td>
+    </tr>
+    <tr>
+      <td>Removing Products</td>
+      <td>As a vendor, I want to remove products I no longer offer so that only current products are displayed in the catalogue.</td>
+    </tr>
+    <tr>
+      <td>Manage Vendor Accounts</td>
+      <td>As an admin (optional), I want to manage vendor accounts so that I can maintain the integrity of the marketplace.</td>
+    </tr>
+    <tr>
+      <td>Moderate Product Listings</td>
+      <td>As an admin (optional), I want to moderate product listings so that inappropriate or incorrect products can be removed.</td>
+    </tr>
+    <tr>
+      <td>Site Analytics</td>
+      <td>As an admin (optional), I want to view site analytics so that I can monitor site performance and user engagement.</td>
+    </tr>
+  </tbody>
+</table>
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+- **Wireframes:**
+  - [Attach or link to accessible wireframes used in the design process, ensuring high colour contrast and alt text for visual elements.]
+  - [Explain the rationale behind the layout and design choices, focusing on usability and accessibility for all users, including those using assistive technologies.]
+    
+- **Design Rationale:**
+  - [Explain key design decisions, such as layout, colour scheme, typography, and how accessibility guidelines (e.g., WCAG) were integrated.]
+  - [Highlight any considerations made for users with disabilities, such as screen reader support.]
+ 
+- **Reasoning For Any Final Changes:**
+  - [Summarise significant changes made to the design during development and the reasons behind them.]
+  - [Reflect on how these changes enhance inclusivity and accessibility.]
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Key Features
+- **Feature 1:** [Briefly describe the implemented feature.]
+- **Feature 2:** [Briefly describe the implemented feature.]
+- **Inclusivity Notes:** 
+  - [Mention how the features address the needs of diverse users, including those with SEND.]
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+## Deployment
+- **Platform:** Heroku
+- **High-Level Deployment Steps:** 
+  1. [Step 1]
+  2. [Step 2]
+  3. [Step 3]
+- **Verification and Validation:**
+  - Steps taken to verify the deployed version matches the development version in functionality.
+  - [Include any additional checks to ensure accessibility of the deployed application.]
+- **Security Measures:**
+  - Use of environment variables for sensitive data.
+  - Ensured DEBUG mode is disabled in production.
 
-### Connecting your Mongo database
+## AI Implementation and Orchestration
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+### Use Cases and Reflections:
+(Highlight how prompts, such as reverse, question-and-answer or multi-step, were used to support learners with SEND or ALN where relevant.)
 
-------
+  - **Site Ideation:**
+    - The name of the site was picked from a list of keyword provided by ChatGPT. DALLE was used to create the logo.
+    - AI was also used to expand the user stories from the initial prompt describing the site's function.
+       
+  - **Content:** 
+    - Once the ERD was complete, GPT was used to create a JSON file of content for the database. 
 
-## Release History
+  - **Code Creation:** 
+    - Reflection: Strategic use of AI allowed for rapid prototyping, with minor adjustments for alignment with project goals. 
+    - Examples: Reverse prompts for alternative code solutions and question-answer prompts for resolving specific challenges.
+  - **Debugging:** 
+    - Reflection: Key interventions included resolving logic errors and enhancing maintainability, with a focus on simplifying complex logic to make it accessible.
+  - **Performance and UX Optimization:** 
+    - Reflection: Minimal manual adjustments were needed to apply AI-driven improvements, which enhanced application speed and user experience for all users.
+  - **Automated Unit Testing:**
+    - Reflection: Adjustments were made to improve test coverage and ensure alignment with functionality. Prompts were used to generate inclusive test cases that considered edge cases for accessibility.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- **Overall Impact:**
+  - AI tools streamlined repetitive tasks, enabling focus on high-level development.
+  - Efficiency gains included faster debugging, comprehensive testing, and improved code quality.
+  - Challenges included contextual adjustments to AI-generated outputs, which were resolved effectively, enhancing inclusivity.
 
-**June 18, 2024,** Add Mongo back into template
+## Testing Summary
+- **Manual Testing:**
+  - **Devices and Browsers Tested:** [List devices and browsers, ensuring testing was conducted with assistive technologies such as screen readers or keyboard-only navigation.]
+  - **Features Tested:** [Summarise features tested manually, e.g., CRUD operations, navigation.]
+  - **Results:** [Summarise testing results, e.g., "All critical features worked as expected, including accessibility checks."]
+- **Automated Testing:**
+  - Tools Used: [Mention any testing frameworks or tools, e.g., Django TestCase.]
+  - Features Covered: [Briefly list features covered by automated tests.]
+  - Adjustments Made: [Describe any manual corrections to AI-generated test cases, particularly for accessibility.]
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
-
-**May 28 2024:** Fix Mongo and Links installs
-
-**April 26 2024:** Update node version to 16
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+## Future Enhancements
+- Users can register and leave reviews on coffee roasts where they comment and rate the coffee on different metrics.
+- Add a webstore component to the site.
