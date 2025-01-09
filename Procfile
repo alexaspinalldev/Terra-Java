@@ -1,1 +1,1 @@
-web: gunicorn terrajava.wsgi
+web: gunicorn TerraJava.wsgi
