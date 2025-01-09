@@ -26,4 +26,6 @@ class Coffee(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return self.name
+        return 'f{self.name} by {sef.vendor}'
+    class Meta:
+        ordering = ["vendor", "name"]
