@@ -18,6 +18,8 @@ The default coffee image is by <a href="https://unsplash.com/@wojtekpaczes?utm_c
 
 The landing page image is by <a href="https://unsplash.com/@projetocafegatomourisco?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">PROJETO CAFÉ GATO-MOURISCO</a> on <a href="https://unsplash.com/photos/a-lush-green-hillside-covered-in-lots-of-trees-zOVRgigQMQA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
+The landing page video is by by Yogendra  Singh: https://www.pexels.com/video/drone-footage-of-rice-terraces-on-a-hill-10982929/
+
 ### User flow
   - [User flow and ERD document](https://miro.com/app/board/uXjVLwAu9aQ=/)
 
