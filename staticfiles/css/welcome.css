@@ -20,5 +20,5 @@ h1 {
 }
 
 .btn {
-    background-color: orange;
+    background-color: var(--highlight-color);
 }
