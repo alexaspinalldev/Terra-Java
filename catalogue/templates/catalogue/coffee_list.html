@@ -1,12 +1,10 @@
 {% load static %}
 
-{% url 'catalogue' as catalogue_url %}
-
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
 <head>
-    <title>Terra Java</title>
+    <title>Terra Java - Catalogue</title>
     <meta name="description" content="Terra Java - Showcasing global coffee roasters and farmers">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -28,17 +26,13 @@
 </head>
 
 <body>
-    <header class="vh-100 d-flex justify-content-center">
-        <video autoplay muted loop id="welcome-bg">
-            <source src="{% static 'images/java-drone.mp4' %}" type="video/mp4">
-        </video>
-        <div id="videoOverlay" class="d-flex flex-column justify-content-center align-items-center text-center p-5">
-            <h1>Welcome to Terra Java</h1>
-            <h2>Click below to explore exotic coffees from farmers and growers from around the globe</h2>
-            <a class="btn btn-dark" href="{% url 'catalogue' %}">Explore</a>
-        </div>
-    
-    </header>
+    <h1>Our Coffees</h1>
+    {% for coffee in object_list %}
+    <h2>{{coffee.name}}</h2>
+    <p>{{coffee.taste_profile}}</p>
+    <p>{{coffee.vendor}}</p>
+    {% endfor %}
+        
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

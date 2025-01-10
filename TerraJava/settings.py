@@ -32,7 +32,7 @@ CSRF_TRUSTED_ORIGINS = [
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-alexaspinalld-terrajava-fqe8j3zzqjf.ws.codeinstitute-ide.net',
@@ -66,7 +66,7 @@ ROOT_URLCONF = 'TerraJava.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["TerraJava/templates"],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,6 +76,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'DIRS': [TEMPLATES_DIR],
     },
 ]
 
