@@ -19,7 +19,7 @@ class Coffee(models.Model):
     origin = models.CharField(max_length=100)
     bean = models.CharField(choices=BEAN_CHOICES)
     taste_profile = models.CharField(max_length=255)
-    roast = models.CharField(choices=[('light', 'Light'), ('medium', 'Medium'), ('dark', 'Dark')])
+    roast = models.CharField(choices=ROAST_LEVELS)
     description = models.TextField()
     # image = models.ImageField(upload_to='coffee_images/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
