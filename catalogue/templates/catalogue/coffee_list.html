@@ -7,34 +7,38 @@
     <div class="row">
         {% for coffee in object_list %}
         <!-- <a href="{#% url 'coffee_detail' coffee.product_ID" %#}> -->
-            <div class="card">
-                <!-- {#% if "" in coffee.image.url %#} -->
-                <img class="card-img-top" src="{% static 'images/coffee-beans.webp' %}" alt="placeholder image">
-                <!-- {#% else %#}
+        <div class="card" style="width: 25%;">
+            <!-- {#% if "" in coffee.image.url %#} -->
+            <img class="card-img-top" src="{% static 'images/coffee-beans.webp' %}" alt="placeholder image">
+            <!-- {#% else %#}
                         <img class="card-img-top" src=" {{ coffee.image.url }}"
                           alt="{{ coffee.coffee_name }}">
                 {#% endif %#} -->
-                <div class="card-body">
-                    <h2>{{coffee.coffee_name}} | {{coffee.taste_profile}}<br>
-                        {{coffee.vendor}} | {{coffee.origin}}</h2>
-                </div>
+            <div class="card-body">
+                <h2>{{coffee.coffee_name}} | {{coffee.taste_profile}}<br>
+                    {{coffee.vendor}} | {{coffee.origin}}</h2>
             </div>
+        </div>
         <!-- </a> -->
+        {% if forloop.counter|divisibleby:4 %}
+    </div>
+    <div class="row">
+        {% endif %}
         {% endfor %}
     </div>
 
-{% if is_paginated %}
-<nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-        {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> &laquo; PREV</a></li>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-        {% endif %}
-    </ul>
-</nav>
-{% endif %}
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> &laquo; PREV</a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
 
 
-{% endblock %}
+    {% endblock %}
