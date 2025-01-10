@@ -2,20 +2,22 @@
 {% load static %}
 
 {% block content %}
-<h1>Browse Coffees</h1>
-<div class="row px-3">
+<div class="row m-0 ps-3">
+    <h1 class="my-3">Browse Coffees</h1>
+</div>
+<div class="row m-0 px-3">
     {% for coffee in object_list %}
     <!-- <a href="{#% url 'coffee_detail' coffee.product_ID" %#}> -->
     <div class="col-12 col-md-3">
-        <div class="card">
+        <div class="card mb-3">
             <!-- {#% if "" in coffee.image.url %#} -->
             <img class="card-img-top" src="{% static 'images/coffee-beans.webp' %}" alt="placeholder image">
             <!-- {#% else %#}
                         <img class="card-img-top" src=" {{ coffee.image.url }}"
                           alt="{{ coffee.coffee_name }}">
                 {#% endif %#} -->
-            <div class="card-body">
-                <h2>{{coffee.coffee_name}} | {{coffee.taste_profile}}<br>
+            <div class="card-body text-center">
+                <h2 class="h6 m-0">{{coffee.coffee_name}} | {{coffee.bean}}<br>
                     {{coffee.vendor.first_name}} | {{coffee.origin}}</h2>
             </div>
         </div>
@@ -23,7 +25,7 @@
     <!-- </a> -->
     {% if forloop.counter|divisibleby:4 %}
 </div>
-<div class="row px-3">
+<div class="row m-0 px-3">
     {% endif %}
     {% endfor %}
 </div>

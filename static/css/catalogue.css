@@ -1,6 +1,29 @@
 
 
 h1 {
-    color: blue;
+    color: var(--heading-color);
+}
+
+.h6 {
+    color: var(--tertiary-color);
     font-style: italic;
+    font-weight: 300;
+}
+
+nav {
+    background-color: var(--nav-color);
+}
+
+.card {
+    background-color: var(--secondary-color);
+}
+
+/* ------------------------------ FOOTER ------------------------------ */
+footer {
+    background-color: #000;
+    color: #FFF;
+    font-size: 1rem;
+    z-index: 100;
+    display: flex;
+    gap: 30px;
 }
