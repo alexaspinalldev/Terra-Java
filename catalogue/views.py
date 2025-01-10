@@ -4,4 +4,5 @@ from .models import Coffee
 
 # Create your views here.
 class CoffeeList(generic.ListView):
-    model = Coffee
+    queryset = Coffee.objects.filter(listing_approved=True)
+    template_name = "coffee_list.html"

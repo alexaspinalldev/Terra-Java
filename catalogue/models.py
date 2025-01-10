@@ -15,7 +15,7 @@ ROAST_LEVELS = [
 class Coffee(models.Model):
     product_ID = models.AutoField(primary_key=True)
     vendor= models.ForeignKey(Vendor, on_delete=models.CASCADE, related_name="vendor_coffees")
-    name = models.CharField(max_length=255)
+    coffee_name = models.CharField(max_length=255)
     origin = models.CharField(max_length=100)
     bean = models.CharField(choices=BEAN_CHOICES)
     taste_profile = models.CharField(max_length=255)
@@ -24,8 +24,9 @@ class Coffee(models.Model):
     # image = models.ImageField(upload_to='coffee_images/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    listing_approved = models.BooleanField(default=False)
     
     def __str__(self):
-        return f'{self.name} by {self.vendor}'
+        return f'{self.coffee_name} by {self.vendor}'
     class Meta:
-        ordering = ["vendor", "name"]
+        ordering = ["vendor", "coffee_name"]
