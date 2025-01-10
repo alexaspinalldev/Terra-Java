@@ -6,3 +6,4 @@ from .models import Coffee
 class CoffeeList(generic.ListView):
     queryset = Coffee.objects.filter(listing_approved=True)
     template_name = "coffee_list.html"
+    paginate_by = 9
