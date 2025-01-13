@@ -1,7 +1,7 @@
 # Terra Java
 
 ## Overview
-Terra Java is a unique catalogue of all the world's finest coffee blends. Taking itss name from the rich coffee fields found on the island of Java in western Indonesia, it aims to showcase the very best coffees from around the globe.
+Terra Java is a boutique catalogue of all the world's finest coffee blends. Taking its name from the rich coffee fields found on the island of Java in western Indonesia, it aims to showcase the very best coffees from around the globe.
 
 Vendors are able to register themselves on the site and upload, edit and delete their coffees.
 Visitors can filter the coffees by attibutes - region, bitterness, bean (Arabica, Robusta, Liberica, and Excelsa)
@@ -10,9 +10,10 @@ Visitors can filter the coffees by attibutes - region, bitterness, bean (Arabica
 ## UX Design Process
 
 ### Graphic design and visual assets:
-[Selected colour pallate](https://coolors.co/432818-34623f-ffee7d-c1b098-ffffff)
+[Selected colour pallate](https://coolors.co/432818-34623f-ffa500-c1b098-e7dfc9)
 
-<img>LOGO IMAGE HERE</img>
+Logo:
+<img src="static/images/tj-logo.png" style="border: 1px solid white; padding: 10px"></img>
 
 The default coffee image is by <a href="https://unsplash.com/@wojtekpaczes?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Wojciech Pacześ</a> on <a href="https://unsplash.com/photos/a-pile-of-coffee-beans-sitting-next-to-each-other-lFJzbKZZ_NU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
@@ -26,73 +27,10 @@ The landing page video is by by [Yogendra Singh on Pexels](https://www.pexels.co
 ### User stories and Project board
   - [Terra Java project board](https://github.com/users/alexaspinalldev/projects/10)
 
- <table border="1">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>User Story</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Landing Page</td>
-      <td>As a visitor, I want to see a landing page when I open the site so that I know what the site is about and can navigate to its features.</td>
-    </tr>
-    <tr>
-      <td>Catalogue Button</td>
-      <td>As a visitor, I want to see a button on the landing page that takes me to the catalogue so that I can browse the available coffees.</td>
-    </tr>
-    <tr>
-      <td>Coffee Grid</td>
-      <td>As a visitor, I want to see a list of coffees displayed in a paginated grid format so that I can browse the available products easily.</td>
-    </tr>
-    <tr>
-      <td>Filter Coffees</td>
-      <td>As a visitor, I want to filter the displayed coffees by product attributes (e.g., roast level, origin, price) so that I can find coffees that match my preferences.</td>
-    </tr>
-    <tr>
-      <td>Coffee Details</td>
-      <td>As a visitor, I want to click on a coffee product and see a detailed product page so that I can learn more about the coffee, including descriptions and attributes.</td>
-    </tr>
-    <tr>
-      <td>Vendor Registration</td>
-      <td>As a vendor, I want to register for an account from the site’s front-end so that I can manage my products.</td>
-    </tr>
-    <tr>
-      <td>Vendor Login</td>
-      <td>As a vendor, I want to log in to my account so that I can access my vendor dashboard.</td>
-    </tr>
-    <tr>
-      <td>Adding Products</td>
-      <td>As a vendor, I want to add new products to the catalogue so that customers can see and purchase my products.</td>
-    </tr>
-    <tr>
-      <td>Editing Products</td>
-      <td>As a vendor, I want to edit the details of my existing products so that I can keep product information up to date.</td>
-    </tr>
-    <tr>
-      <td>Removing Products</td>
-      <td>As a vendor, I want to remove products I no longer offer so that only current products are displayed in the catalogue.</td>
-    </tr>
-    <tr>
-      <td>Manage Vendor Accounts</td>
-      <td>As an admin (optional), I want to manage vendor accounts so that I can maintain the integrity of the marketplace.</td>
-    </tr>
-    <tr>
-      <td>Moderate Product Listings</td>
-      <td>As an admin (optional), I want to moderate product listings so that inappropriate or incorrect products can be removed.</td>
-    </tr>
-    <tr>
-      <td>Site Analytics</td>
-      <td>As an admin (optional), I want to view site analytics so that I can monitor site performance and user engagement.</td>
-    </tr>
-  </tbody>
-</table>
-
-
-- **Wireframes:**
-  - [Attach or link to accessible wireframes used in the design process, ensuring high colour contrast and alt text for visual elements.]
-  - [Explain the rationale behind the layout and design choices, focusing on usability and accessibility for all users, including those using assistive technologies.]
+### Wireframes:
+<img src="static/images/README/Landing.png" style="width: 33%"></img>
+<img src="static/images/README/Catalogue.png" style="width: 33%"></img>
+<img src="static/images/README/CoffeeDetail.png" style="width: 33%"></img>
     
 - **Design Rationale:**
   - [Explain key design decisions, such as layout, colour scheme, typography, and how accessibility guidelines (e.g., WCAG) were integrated.]
@@ -124,22 +62,22 @@ The landing page video is by by [Yogendra Singh on Pexels](https://www.pexels.co
 ## AI Implementation and Orchestration
 
 ### Use Cases and Reflections:
-(Highlight how prompts, such as reverse, question-and-answer or multi-step, were used to support learners with SEND or ALN where relevant.)
-
   - **Site Ideation:**
     - The name of the site was picked from a list of keyword provided by ChatGPT. DALLE was used to create the logo.
-    - AI was also used to expand the user stories from the initial prompt describing the site's function.
+    - AI was also used to expand the user stories from the initial prompt describing the site's functions.
        
   - **Content:** 
-    - Once the ERD was complete, GPT was used to create a JSON file of content for the database. 
+    - Once the ERD was complete, GPT was used to create a JSON import scripts for the lists of Vendors and Coffees.
 
   - **Code Creation:** 
-    - Reflection: Strategic use of AI allowed for rapid prototyping, with minor adjustments for alignment with project goals. 
-    - Examples: Reverse prompts for alternative code solutions and question-answer prompts for resolving specific challenges.
+    - GPT was used to cross-examine my proposed ERD, suggesting new fields, and then create the model objects.
+
   - **Debugging:** 
     - Reflection: Key interventions included resolving logic errors and enhancing maintainability, with a focus on simplifying complex logic to make it accessible.
+
   - **Performance and UX Optimization:** 
     - Reflection: Minimal manual adjustments were needed to apply AI-driven improvements, which enhanced application speed and user experience for all users.
+
   - **Automated Unit Testing:**
     - Reflection: Adjustments were made to improve test coverage and ensure alignment with functionality. Prompts were used to generate inclusive test cases that considered edge cases for accessibility.
 
