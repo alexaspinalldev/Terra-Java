@@ -69,7 +69,8 @@ ol, ul {
   --tertiary-color: #626262;
   --highlight-color: orange;
 }
-    
+
+/* Global styles */
 body {
   font-family: "League Spartan", sans-serif;
   background-color: #FFF;
@@ -77,4 +78,13 @@ body {
 
 a:hover {
   text-decoration: underline;
+}
+
+nav {
+  background-color: var(--nav-color);
+}
+
+.navbar-brand img {
+  height: 3rem;
+  margin-left: 1rem;
 }
