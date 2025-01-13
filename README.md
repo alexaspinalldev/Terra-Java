@@ -12,8 +12,8 @@ Visitors can filter the coffees by attibutes - region, bitterness, bean (Arabica
 ### Graphic design and visual assets:
 [Selected colour pallate](https://coolors.co/432818-34623f-ffa500-c1b098-e7dfc9)
 
-Logo:
-<img src="static/images/tj-logo.png" style="border: 1px solid white; padding: 10px"></img>
+Logo:<br>
+<img src="static/images/tj-logo.png" style="border: 1px solid white; padding: 10px; width: 50%"></img>
 
 The default coffee image is by <a href="https://unsplash.com/@wojtekpaczes?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Wojciech Pacześ</a> on <a href="https://unsplash.com/photos/a-pile-of-coffee-beans-sitting-next-to-each-other-lFJzbKZZ_NU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
@@ -21,8 +21,8 @@ The landing page image is by <a href="https://unsplash.com/@projetocafegatomouri
 
 The landing page video is by by [Yogendra Singh on Pexels](https://www.pexels.com/video/drone-footage-of-rice-terraces-on-a-hill-10982929/).
 
-### User flow
-  - [User flow and ERD document](https://miro.com/app/board/uXjVLwAu9aQ=/)
+### User flow and ERD
+  - [Link to Miro](https://miro.com/app/board/uXjVLuC7tmQ=/?share_link_id=877125417995)
 
 ### User stories and Project board
   - [Terra Java project board](https://github.com/users/alexaspinalldev/projects/10)
