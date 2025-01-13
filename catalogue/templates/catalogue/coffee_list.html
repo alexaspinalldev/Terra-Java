@@ -9,6 +9,7 @@
     {% for coffee in object_list %}
     <div class="col-12 col-md-3">
         <div class="card mb-3">
+            <div class="card-top">
             <a href="{% url 'coffee_detail' coffee.product_ID %}">
             <!-- {#% if "" in coffee.image.url %#} -->
             <img class="card-img-top" src="{% static 'images/coffee-beans.webp' %}" alt="placeholder image">
@@ -17,6 +18,7 @@
                           alt="{{ coffee.coffee_name }}">
                 {#% endif %#} -->
             </a>
+        </div>
             <div class="card-body text-center">
                 <h2 class="h6 m-0"></h2><a href="{% url 'coffee_detail' coffee.product_ID %}">
                 {{coffee.coffee_name}} | {{coffee.bean}}<br><br>

@@ -16,6 +16,23 @@ nav {
 
 .card {
     background-color: var(--secondary-color);
+    overflow: hidden;
+}
+
+.card-top {
+    overflow: hidden;
+}
+
+.card-top a img {
+    transition: transform 1s ease-out;
+}
+
+.card-top a img:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    font-style: italic;
 }
 
 /* ------------------------------ FOOTER ------------------------------ */
