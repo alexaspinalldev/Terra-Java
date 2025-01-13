@@ -7,7 +7,7 @@
 </div>
 <div class="row m-0 px-3">
     {% for coffee in object_list %}
-    <!-- <a href="{#% url 'coffee_detail' coffee.product_ID" %#}> -->
+    <a href="{% url 'coffee_detail' coffee.product_ID %}">
     <div class="col-12 col-md-3">
         <div class="card mb-3">
             <!-- {#% if "" in coffee.image.url %#} -->
@@ -17,12 +17,12 @@
                           alt="{{ coffee.coffee_name }}">
                 {#% endif %#} -->
             <div class="card-body text-center">
-                <h2 class="h6 m-0">{{coffee.coffee_name}} | {{coffee.bean}}<br>
+                <h2 class="h6 m-0">{{coffee.coffee_name}} | {{coffee.bean}}<br><br>
                     {{coffee.vendor.first_name}} | {{coffee.origin}}</h2>
             </div>
         </div>
     </div>
-    <!-- </a> -->
+    </a>
     {% if forloop.counter|divisibleby:4 %}
 </div>
 <div class="row m-0 px-3">
