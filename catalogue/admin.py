@@ -6,6 +6,6 @@ from .models import Coffee
 
 @admin.register(Coffee)
 class CoffeeAdmin(admin.ModelAdmin):
-    list_display = ('coffee_name', 'vendor', 'listing_approved')
+    list_display = ('product_ID', 'coffee_name', 'vendor', 'listing_approved')
     search_fields = ['title', 'vendor']
     list_filter = ('vendor', 'listing_approved')
