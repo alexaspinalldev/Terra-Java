@@ -2,7 +2,24 @@
 {% load static %}
 
 {% block content %}
+<div class="row">
+    <div class="col-12 col-md-6"><!-- {#% if "" in coffee.image.url %#} -->
+        <img class="card-img-top" src="{% static 'images/coffee-beans.webp' %}" alt="placeholder image">
+        <!-- {#% else %#}
+                    <img class="card-img-top" src=" {{ coffee.image.url }}"
+                      alt="{{ coffee.coffee_name }}">
+            {#% endif %#} -->
+    </div>
+    <div class="col-12 col-md-6">
+        <h1 class="m-0">{{coffee.coffee_name}}</h1>
+        <h2 class="h6 m-0">by {{coffee.vendor.first_name}}</h2>
+        <h2 class="h6 m-0">Bean: {{coffee.bean}}</h2>
+        <h2 class="h6 m-0">Origin: {{coffee.origin}}</h2>
+        <h2 class="h6 m-0">Taste profile: {{coffee.taste_profile}}</h2>
+        <h2 class="h6 m-0">Roast: {{coffee.roast}}</h2>
+        <p class="">{{coffee.description}}</p>
+    </div>
+</div>
 
-Coffee detail {{coffee.coffee_name}}
 
 {% endblock %}
