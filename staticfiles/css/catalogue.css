@@ -32,6 +32,13 @@ h1 {
 }
 
 /* ------------------------------ FOOTER ------------------------------ */
+.footer-image {
+    height: 12vw;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+}
+
 footer {
     background-color: #000;
     color: #FFF;

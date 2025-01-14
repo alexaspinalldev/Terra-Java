@@ -14,7 +14,13 @@
             {#% endif %#} -->
     </div>
     <div class="col-12 col-md-6">
-        <h1 class="m-0">{{coffee.coffee_name}}</h1>
+        <div class="d-flex justify-content-between">
+            <h1 class="m-0">{{coffee.coffee_name}}</h1>
+            <div class="nav-buttons">
+                <button type="button" class="btn btn-dark">Edit listing</button>
+                <button type="button" class="btn btn-dark">Delete listing</button>
+            </div>
+        </div>
         <h2 class="h6 m-0">by {{coffee.vendor.first_name}}</h2>
         <h2 class="h6 m-0">Bean: {{coffee.bean}}</h2>
         <h2 class="h6 m-0">Origin: {{coffee.origin}}</h2>
