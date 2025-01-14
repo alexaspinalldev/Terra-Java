@@ -13,6 +13,9 @@ h1 {
 .card {
     background-color: var(--secondary-color);
     overflow: hidden;
+    /* display: flex;
+    flex-direction: column; */
+    height: 100%;
 }
 
 .card-top {
@@ -31,19 +34,32 @@ h1 {
     font-style: italic;
 }
 
+
+/* ------------------------------ LOGOUT ------------------------------ */
+.logout-image {
+    max-width: 100%;
+    max-height: 550px;
+    object-fit: contain;
+}
+
+
 /* ------------------------------ FOOTER ------------------------------ */
 .footer-image {
-    height: 12vw;
+    height: 10vw;
     width: 100%;
     object-fit: cover;
     object-position: 50% 0%;
 }
 
-footer {
+.subfooter {
     background-color: #000;
     color: #FFF;
     font-size: 1rem;
     z-index: 100;
     display: flex;
-    gap: 30px;
+    gap: 15px;
+}
+
+.subfooter a {
+    text-decoration: underline;
 }
