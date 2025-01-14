@@ -17,8 +17,10 @@
         <div class="d-flex justify-content-between">
             <h1 class="m-0">{{coffee.coffee_name}}</h1>
             <div class="nav-buttons">
+                {% if user.is_authenticated and user.id == coffee.vendor.id %}
                 <button type="button" class="btn btn-dark">Edit listing</button>
                 <button type="button" class="btn btn-dark">Delete listing</button>
+                {% endif %}
             </div>
         </div>
         <h2 class="h6 m-0">by {{coffee.vendor.first_name}}</h2>

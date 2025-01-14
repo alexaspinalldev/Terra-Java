@@ -14,7 +14,7 @@ ROAST_LEVELS = [
 # Create your models here.
 class Coffee(models.Model):
     product_ID = models.AutoField(primary_key=True)
-    vendor= models.ForeignKey(Vendor, on_delete=models.CASCADE, related_name="vendor_coffees")
+    vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE, related_name="vendor_coffees")
     coffee_name = models.CharField(max_length=255)
     origin = models.CharField(max_length=100)
     bean = models.CharField(choices=BEAN_CHOICES)
