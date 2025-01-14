@@ -50,8 +50,10 @@
 </nav>
 {% endif %}
 
-<div id="loadingModal" class="modal">
-    <img src="{% static 'images/tj-logo.png' %}" alt="Please wait while your request loads">
+<div class="modal" id="loadingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" inert>
+    <div class="modal-dialog modal-dialog-centered">
+        <img src="{% static 'images/tj-logo-light.png' %}" alt="Please wait while your request loads" style="width: 100%;">
+    </div>
 </div>
 
   <!-- Loading animation -->
