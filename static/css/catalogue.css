@@ -34,6 +34,12 @@ h1 {
     font-style: italic;
 }
 
+.bean-icon {
+    height: 1rem;
+    display: inline;
+    margin: -1px;
+}
+
 
 /* ------------------------------ LOGOUT ------------------------------ */
 .logout-image {
