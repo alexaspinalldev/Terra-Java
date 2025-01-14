@@ -15,5 +15,6 @@ def coffee_detail(request, product_ID):
     return render(
         request,
         "coffee_detail.html",
-        {"coffee": coffee},
+        {"coffee": coffee,
+        "page_title": coffee.coffee_name},
     )

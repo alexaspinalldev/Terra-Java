@@ -13,7 +13,7 @@
     <div class="col-12 col-md-3">
         <div class="card mb-3">
             <div class="card-top">
-            <a href="{% url 'coffee_detail' coffee.product_ID %}" data-load>
+            <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
             <!-- {#% if "" in coffee.image.url %#} -->
             <img class="card-img-top" src="{% static 'images/coffee-beans.webp' %}" alt="placeholder image">
             <!-- {#% else %#}
@@ -23,10 +23,13 @@
             </a>
         </div>
             <div class="card-body text-center">
-                <h2 class="h6 m-0"></h2><a href="{% url 'coffee_detail' coffee.product_ID %}" data-load>
-                {{coffee.coffee_name}} | {{coffee.bean}}<br><br>
+                <h2 class="h6 m-0">
+                    <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
+                    {{coffee.coffee_name}} | {{coffee.bean}}
+                    <br><br>
                     {{coffee.vendor.first_name}} | {{coffee.origin}}
-                </a></h2>
+                    </a>
+                </h2>
             </div>
         </div>
     </div>

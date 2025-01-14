@@ -1,11 +1,11 @@
 {% load static %}
-{% url 'catalogue' as catalogue_url %}
+{% url 'Catalogue' as catalogue_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
 <head>
-  <title>Terra Java - {view.name}</title>
+  <title>{% if page_title %}{{ page_title }}{% else %}{{ request.resolver_match.view_name }}{% endif %}</title>
   <meta name="description" content="Terra Java - Showcasing global coffee roasters and farmers">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -22,7 +22,7 @@
 <body>
   <nav class="navbar navbar-expand-sm sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'catalogue' %}"><img src="{% static 'images/tj-logo.png' %}"
+      <a class="navbar-brand" href="{% url 'Catalogue' %}"><img src="{% static 'images/tj-logo.png' %}"
           alt="Terra Java"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
       </button>
       <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" href="{% url 'catalogue' %}">| Home |</a>
+          <a class="nav-link" href="{% url 'Catalogue' %}">| Home |</a>
         </div>
         <div class="nav-buttons">
           <button type="button" class="btn btn-dark">Vendor login</button>
