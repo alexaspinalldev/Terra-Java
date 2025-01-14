@@ -15,11 +15,14 @@ Visitors can filter the coffees by attibutes - region, bitterness, bean (Arabica
 Logo:<br>
 <img src="static/images/tj-logo.png" style="border: 1px solid white; padding: 10px; width: 50%"></img>
 
-The default coffee image is by <a href="https://unsplash.com/@wojtekpaczes?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Wojciech Pacześ</a> on <a href="https://unsplash.com/photos/a-pile-of-coffee-beans-sitting-next-to-each-other-lFJzbKZZ_NU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+Image credits:<br>
+[Ashlyn Ciara](https://unsplash.com/@ashlynciara?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-man-in-a-hat-picking-berries-from-a-bush-4rbWwrtMQ1c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
-The landing page image is by <a href="https://unsplash.com/@projetocafegatomourisco?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">PROJETO CAFÉ GATO-MOURISCO</a> on <a href="https://unsplash.com/photos/a-lush-green-hillside-covered-in-lots-of-trees-zOVRgigQMQA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+[Wojciech Pacześ](https://unsplash.com/@wojtekpaczes?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-pile-of-coffee-beans-sitting-next-to-each-other-lFJzbKZZ_NU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
-The landing page video is by by [Yogendra Singh on Pexels](https://www.pexels.com/video/drone-footage-of-rice-terraces-on-a-hill-10982929/).
+[PROJETO CAFÉ GATO-MOURISCO](https://unsplash.com/@projetocafegatomourisco?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-lush-green-hillside-covered-in-lots-of-trees-zOVRgigQMQA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+
+[Yogendra Singh on Pexels](https://www.pexels.com/video/drone-footage-of-rice-terraces-on-a-hill-10982929/).
 
 ### User flow and ERD
   - [Link to Miro](https://miro.com/app/board/uXjVLuC7tmQ=/?share_link_id=877125417995)
