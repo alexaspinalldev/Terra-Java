@@ -1,5 +1,5 @@
 {% load static %}
-{% url 'catalogue' as catalogue_url %}
+{% url 'Catalogue' as catalogue_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -27,7 +27,7 @@
         <div id="videoOverlay" class="d-flex flex-column justify-content-center align-items-center text-center p-5">
             <img src="{% static 'images/tj-logo-light.png' %}" alt="Welcome to Terra Java">
             <h2>Click below to explore exotic coffees from boutique farmers and growers around the globe</h2>
-            <a class="btn btn-dark" href="{% url 'catalogue' %}">Explore</a>
+            <a class="btn btn-dark" href="{% url 'Catalogue' %}">Explore</a>
         </div>
     
     </header>
