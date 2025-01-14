@@ -6,7 +6,7 @@ from .models import Coffee
 class CoffeeList(generic.ListView):
     queryset = Coffee.objects.filter(listing_approved=True)
     template_name = "coffee_list.html"
-    paginate_by = 12
+    paginate_by = 16
 
 def coffee_detail(request, product_ID):
     queryset = Coffee.objects.filter(listing_approved=True)

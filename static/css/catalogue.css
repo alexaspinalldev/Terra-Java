@@ -13,6 +13,9 @@ h1 {
 .card {
     background-color: var(--secondary-color);
     overflow: hidden;
+    /* display: flex;
+    flex-direction: column; */
+    height: 100%;
 }
 
 .card-top {
@@ -29,6 +32,7 @@ h1 {
 
 .card-body {
     font-style: italic;
+    /* flex-grow: 1; */
 }
 
 /* ------------------------------ FOOTER ------------------------------ */
