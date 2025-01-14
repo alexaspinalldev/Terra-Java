@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body class="min-vh-100 d-flex flex-column">
   <nav class="navbar navbar-expand-sm sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'Catalogue' %}"><img src="{% static 'images/tj-logo.png' %}"
@@ -37,25 +37,35 @@
         </div>
         <div class="nav-buttons">
           {% if user.is_authenticated %}
-          <button type="button" class="btn btn-dark"><a href="{% url 'account_logout' %}">Logout</a></button>
+            <a href="{% url 'account_logout' %}" class="btn btn-dark">Logout</a>
           {% else %}
-          <button type="button" class="btn btn-dark"><a href="{% url 'account_signup' %}">Vendor login</a></button>
-          {% endif %}
+            <a href="{% url 'account_signup' %}" class="btn btn-dark">Showcase your coffee</a>
+          {% endif %}        
         </div>
       </div>
     </div>
   </nav>
-  <main class="min-vh-100">
+  <main>
     {% block content %}
 
     {% endblock content %}
   </main>
-  <img class="footer-image" src="{% static 'images/coffee-farm.webp' %}" alt="An image of a coffee farm">
-  <footer class="mt-auto p-1 ps-3">
-    <div>
+  <footer class="mt-auto d-flex flex-column">
+    <img class="footer-image" src="{% static 'images/coffee-farm.webp' %}" alt="An image of a coffee farm">
+    <div class="p-1 ps-3 subfooter">
+      <div>
       Website by <a href="https://github.com/alexaspinalldev"
         aria-label="Alex Aspinall's Github account (opens in a new tab)" target="_blank">Alex Aspinall</a> ©
       <span id="year"></span>
+    </div>
+    <div>
+      |
+    </div>
+    <div>
+      <a href="https://github.com/alexaspinalldev/Terra-Java/blob/main/README.md"
+        aria-label="View the README for this project (opens in a new tab)" target="_blank">Read Me</a>
+    </div>
+    </div>
     </div>
   </footer>
 
