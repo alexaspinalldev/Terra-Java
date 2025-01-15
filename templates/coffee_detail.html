@@ -18,8 +18,8 @@
             <h1 class="m-0">{{coffee.coffee_name}}</h1>
             <div class="nav-buttons">
                 {% if user.is_authenticated and user.id == coffee.vendor.id %}
-                <button type="button" class="btn btn-dark">Edit listing</button>
-                <button type="button" class="btn btn-dark">Delete listing</button>
+                <button type="button" class="btn btn-dark" id="editBtn">Edit listing</button>
+                <button type="button" class="btn btn-dark" id="deleteBtn">Delete listing</button>
                 {% endif %}
             </div>
         </div>
@@ -32,5 +32,33 @@
     </div>
 </div>
 
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1"
+  aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"
+          id="deleteModalLabel">Delete coffee?</h5>
+        <button type="button" class="btn-close"
+          data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete your coffee?
+        This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light"
+          data-bs-dismiss="modal">Close</button>
+        <a id="deleteConfirm" href="#" class="btn
+          btn-dark">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CRUD URLS -->
+<script defer src="{% static 'js/listing-edit-delete.js' %}">
+</script>
 
 {% endblock %}

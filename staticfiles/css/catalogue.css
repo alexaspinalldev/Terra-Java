@@ -36,7 +36,8 @@ h1 {
 
 .bean-icon {
     height: 1rem;
-    color: red;
+    display: inline;
+    margin: -1px;
 }
 
 
