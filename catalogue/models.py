@@ -11,7 +11,6 @@ ROAST_LEVELS = [
     ('medium', 'Medium'),
     ('dark', 'Dark'),]
 
-# Create your models here.
 class Coffee(models.Model):
     product_ID = models.AutoField(primary_key=True)
     vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE, related_name="vendor_coffees")

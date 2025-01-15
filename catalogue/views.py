@@ -3,6 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Coffee
+from .forms import CoffeeUpdate
 
 # Create your views here.
 class CoffeeList(generic.ListView):
@@ -20,6 +21,27 @@ def coffee_detail(request, product_ID):
         {"coffee": coffee,
         "page_title": coffee.coffee_name},
     )
+
+def coffee_edit(request, product_ID):
+    """
+    view to edit a coffee listing. The button is only visible to authenticated users who are also the Coffee Vendor.
+    """
+    if request.method == "POST":
+        queryset = Coffee.objects
+        coffee = get_object_or_404(queryset, product_ID=product_ID)
+        coffee_update = CoffeeUpdate(data=request.POST)
+
+        if coffee_update.is_valid() and coffee.vendor == request.user:
+            coffee = coffee_update.save(commit=False)
+            # coffee.listing_approved = False # In production this would be moderated
+            coffee.save()
+            messages.add_message(request, messages.SUCCESS, 'The listing was updated')
+    else:
+        messages.add_message(request, messages.ERROR, 'Error updating listing')
+
+    return HttpResponseRedirect(reverse('Coffee detail', args=[product_ID]))
+
+
 
 def coffee_delete(request, product_ID):
     """
