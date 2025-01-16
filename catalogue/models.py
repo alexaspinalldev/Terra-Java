@@ -32,5 +32,5 @@ class Coffee(models.Model):
 
 
 class VendorAbout(models.Model):
-    vendor = models.OneToOneField(Vendor, on_delete=models.CASCADE)
+    vendor = models.OneToOneField(Vendor, on_delete=models.CASCADE, related_name="vendorabout")
     about = models.TextField()
