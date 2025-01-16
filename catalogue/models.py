@@ -29,3 +29,8 @@ class Coffee(models.Model):
         return f'{self.coffee_name} by {self.vendor}'
     class Meta:
         ordering = ["vendor", "coffee_name"]
+
+
+class VendorAbout(models.Model):
+    vendor = models.OneToOneField(Vendor, on_delete=models.CASCADE)
+    about = models.TextField()
