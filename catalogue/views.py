@@ -3,6 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Coffee
+from .forms import CoffeeAdd
 from .forms import CoffeeUpdate
 from django.utils import timezone
 
@@ -12,6 +13,8 @@ class CoffeeList(generic.ListView):
     template_name = "coffee_list.html"
     paginate_by = 16
 
+
+
 def coffee_detail(request, product_ID):
     queryset = Coffee.objects.filter(listing_approved=True)
     coffee = get_object_or_404(queryset, product_ID=product_ID)
@@ -20,8 +23,33 @@ def coffee_detail(request, product_ID):
         request,
         "coffee_detail.html",
         {"coffee": coffee,
-        "page_title": coffee.coffee_name},
-    )
+        "page_title": coffee.coffee_name},)
+
+
+
+def coffee_add(request):
+    """
+    view to add a new coffee listing. The button is only visible to authenticated users.
+    """
+    if request.method == "POST":
+        coffee_to_add = CoffeeAdd(data=request.POST)
+
+        if coffee_to_add.is_valid():
+            coffee = coffee_to_add.save(commit=False)
+            coffee.vendor = request.user # Explicitly adding the required values as "using commit=False creates an unsaved instance of the Coffee object"
+            coffee.updated_at = timezone.now()
+            coffee.created_at = timezone.now()
+            coffee.listing_approved = True # In production this would be false in order to be moderated
+            coffee.save()
+            new_coffee_id = coffee.pk
+
+            messages.add_message(request, messages.SUCCESS, 'Your listing was added')
+    else:
+        messages.add_message(request, messages.ERROR, 'Error adding listing')
+
+    return HttpResponseRedirect(reverse('Coffee detail', args=[new_coffee_id]))
+
+
 
 def coffee_edit(request, product_ID):
     """
@@ -37,7 +65,7 @@ def coffee_edit(request, product_ID):
 
         if coffee_update.is_valid() and coffee.vendor == request.user:
             coffee = coffee_update.save(commit=False)
-            coffee.vendor = editingVendor # Explicitly the fixed values as "using commit=False creates an unsaved instance of the Coffee object" and Vendor is required.
+            coffee.vendor = editingVendor # Explicitly adding the fixed values as "using commit=False creates an unsaved instance of the Coffee object" and Vendor is required.
             coffee.product_ID = idToUpdate
             coffee.updated_at = timezone.now()
             coffee.created_at = existingCreated_at

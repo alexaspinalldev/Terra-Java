@@ -6,7 +6,7 @@
     <h1 class="m-0">Browse Coffees</h1>
     <div class="nav-buttons">
         {% if user.is_authenticated %}
-        <button type="button" class="btn btn-dark">Add new coffee listing</button>
+        <button type="button" class="btn btn-dark" id="addBtn">Add new coffee listing</button>
         {% endif %}
     </div>
 </div>
@@ -61,8 +61,62 @@
     </div>
 </div>
 
+<!-- Add modal -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addModalLabel">Add new coffee</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form method="POST" action="add/" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="modal-body">
+            <!-- Coffee Name -->
+            <label for="coffee_name">Coffee Name:</label>
+            <input type="text" id="coffee_name" name="coffee_name" maxlength="255" required>
+            <!-- Origin -->
+            <label for="origin">Origin (Country):</label>
+            <input type="text" id="origin" name="origin" maxlength="100" required>
+            <!-- Bean Type -->
+            <label for="bean">Bean Type:</label>
+            <select id="bean" name="bean" required>
+              <option value="arabica">Arabica</option>
+              <option value="excelsa">Excelsa</option>
+              <option value="robusta">Robusta</option>
+              <option value="liberica">Liberica</option>
+            </select>
+            <!-- Taste Profile -->
+            <label for="taste_profile">Taste Profile:</label>
+            <input type="text" id="taste_profile" name="taste_profile" maxlength="255" required>
+            <!-- Roast Level -->
+            <label for="roast">Roast Level:</label>
+            <select id="roast" name="roast" required>
+              <option value="light">Light</option>
+              <option value="medium">Medium</option>
+              <option value="dark">Dark</option>
+            </select>
+            <!-- Description -->
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5" cols="40" required></textarea>
+            <!-- Image -->
+            <!-- <label for="image">Image (optional):</label>
+            <input type="file" id="image" name="image" accept="image/*"> -->
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-dark" data-bs-dismiss="modal">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
   <!-- Loading animation -->
 <script defer src="{% static 'js/loading.js' %}">
+</script>
+  
+  <!-- CRUD URLS -->
+<script defer src="{% static 'js/listing-add.js' %}">
 </script>
 
 {% endblock %}

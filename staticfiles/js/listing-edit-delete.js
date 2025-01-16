@@ -11,3 +11,11 @@ deleteBtn.addEventListener("click", () => {
 deleteConfirm.addEventListener("click", () => {
     deleteConfirm.href = "delete"
 })
+
+// Edit listing
+const editBtn = document.getElementById("editBtn")
+const editModal = new bootstrap.Modal(document.getElementById("editModal"));
+editBtn.addEventListener("click", () => {
+    editModal.show()
+    // Fill all fields here
+})
