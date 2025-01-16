@@ -88,3 +88,7 @@ nav {
   height: 3rem;
   margin-left: 1rem;
 }
+
+input {
+  display: block;
+}

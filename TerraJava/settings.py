@@ -64,6 +64,10 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/catalogue/'
 LOGOUT_REDIRECT_URL = '/catalogue/'
 
+ACCOUNT_FORMS = {
+    'signup': 'catalogue.forms.CustomSignupForm',
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',

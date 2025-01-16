@@ -24,6 +24,7 @@ input, button, textarea, select {
   letter-spacing: inherit;
   word-spacing: inherit;
   color: currentColor;
+  display: block;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
