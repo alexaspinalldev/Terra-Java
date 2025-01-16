@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Coffee
 from .forms import CoffeeUpdate
+from django.utils import timezone
 
 # Create your views here.
 class CoffeeList(generic.ListView):
@@ -30,10 +31,17 @@ def coffee_edit(request, product_ID):
         queryset = Coffee.objects
         coffee = get_object_or_404(queryset, product_ID=product_ID)
         coffee_update = CoffeeUpdate(data=request.POST)
+        editingVendor = coffee.vendor
+        idToUpdate = product_ID
+        existingCreated_at = coffee.created_at
 
         if coffee_update.is_valid() and coffee.vendor == request.user:
             coffee = coffee_update.save(commit=False)
-            # coffee.listing_approved = False # In production this would be moderated
+            coffee.vendor = editingVendor # Explicitly the fixed values as "using commit=False creates an unsaved instance of the Coffee object" and Vendor is required.
+            coffee.product_ID = idToUpdate
+            coffee.updated_at = timezone.now()
+            coffee.created_at = existingCreated_at
+            coffee.listing_approved = True # In production this would be false in order to be moderated
             coffee.save()
             messages.add_message(request, messages.SUCCESS, 'The listing was updated')
     else:
