@@ -8,11 +8,15 @@ from .forms import CoffeeUpdate
 from django.utils import timezone
 
 # Create your views here.
+# Main list of all approved listings
 class CoffeeList(generic.ListView):
     queryset = Coffee.objects.filter(listing_approved=True)
     template_name = "coffee_list.html"
     paginate_by = 16
 
+
+
+# Filtered list for the user
 class CoffeeMyList(generic.ListView):
     template_name = "coffee_list.html"
     paginate_by = 16
@@ -22,9 +26,17 @@ class CoffeeMyList(generic.ListView):
         user = self.request.user
         # Filter Coffee objects for the current user and approved listings
         return Coffee.objects.filter(listing_approved=True, vendor=user)
-        
+
+    def get(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        if not queryset.exists():
+            # Add a message and redirect if no listings exist
+            messages.error(request, "You do not have any approved listings.")
+        return super().get(request, *args, **kwargs)
 
 
+
+# Detail view of an individual coffee listing
 def coffee_detail(request, product_ID):
     queryset = Coffee.objects.filter(listing_approved=True)
     coffee = get_object_or_404(queryset, product_ID=product_ID)
@@ -37,6 +49,7 @@ def coffee_detail(request, product_ID):
 
 
 
+# Add a new coffee listing
 def coffee_add(request):
     """
     view to add a new coffee listing. The button is only visible to authenticated users.
@@ -61,6 +74,7 @@ def coffee_add(request):
 
 
 
+# Edit a coffee listing
 def coffee_edit(request, product_ID):
     """
     view to edit a coffee listing. The button is only visible to authenticated users who are also the Coffee Vendor.
@@ -89,6 +103,7 @@ def coffee_edit(request, product_ID):
 
 
 
+# Delete a coffee listing
 def coffee_delete(request, product_ID):
     """
     view to delete a coffee listing. The button is only visible to authenticated users who are also the Coffee Vendor.
