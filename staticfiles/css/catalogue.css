@@ -1,5 +1,14 @@
 
 
+nav {
+    background-color: var(--nav-color);
+}
+  
+.navbar-brand img {
+height: 3rem;
+margin-left: 1rem;
+}
+
 h1 {
     color: var(--heading-color);
 }
