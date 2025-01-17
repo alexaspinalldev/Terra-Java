@@ -49,6 +49,33 @@ h1 {
     margin: -1px;
 }
 
+.alertparent {
+    position: absolute;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    top: 4rem;
+}
+
+.alert {
+    border: 2px solid var(--heading-color);
+    width: fit-content;
+    z-index: 1050;
+    background-color: white;
+    margin: 0;
+}
+
+.success {
+    color: #34623F;
+}
+
+.error {
+    color: #6F1F1F;
+}
+
+/* ------------------------------ Coffee detail ------------------------------ */
+
 .vendorAbout {
     text-align: center;
     font-style: italic;
