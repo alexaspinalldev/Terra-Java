@@ -40,6 +40,12 @@ h1 {
     margin: -1px;
 }
 
+.vendorAbout {
+    text-align: center;
+    font-style: italic;
+    color: var(--tertiary-color);
+}
+
 
 /* ------------------------------ Login/Logout/Signup ------------------------------ */
 .logout-image {

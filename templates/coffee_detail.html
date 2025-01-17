@@ -13,7 +13,7 @@
                       alt="{{ coffee.coffee_name }}">
             {#% endif %#} -->
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6 p-4 p-md-3">
         <div class="d-flex justify-content-between">
             <h1 class="m-0">{{coffee.coffee_name}}</h1>
             <div class="nav-buttons">
@@ -23,13 +23,15 @@
                 {% endif %}
             </div>
         </div>
-        <h2 class="h6 m-0">by {{coffee.vendor.first_name}}</h2>
-        <h2 class="h6 m-0">Bean: {{coffee.bean}}</h2>
-        <h2 class="h6 m-0">Origin: {{coffee.origin}}</h2>
-        <h2 class="h6 m-0">Taste profile: {{coffee.taste_profile}}</h2>
-        <h2 class="h6 m-0">Roast: {{coffee.roast}}</h2>
-        <p class="coffeeDesc">{{coffee.description}}</p>
-        <p class="vendorAbout">{{coffee.vendor.vendorabout.about}}</p>
+        <h2 class="h5 mb-3">by {{coffee.vendor.first_name}}</h2>
+        <ul>
+        <li class="h6 m-0">Bean: {{coffee.bean}}</li>
+        <li class="h6 m-0">Origin: {{coffee.origin}}</li>
+        <li class="h6 m-0">Taste profile: {{coffee.taste_profile}}</li>
+        <li class="h6 m-0">Roast: {{coffee.roast}}</li>
+      </ul>
+        <div class="coffeeDesc mb-3">{{coffee.description | linebreaks}}</div>
+        <p class="vendorAbout">"{{coffee.vendor.vendorabout.about}}"</p>
     </div>
 </div>
 

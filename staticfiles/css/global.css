@@ -24,6 +24,7 @@ input, button, textarea, select {
   letter-spacing: inherit;
   word-spacing: inherit;
   color: currentColor;
+  display: block;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -37,28 +38,11 @@ a {
 
 ol, ul {
   list-style: none;
+  padding: 0;
 }
 
-:not([class]) {
-  h1&, h2&, h3&, h4&, h5&, h6& {
-    margin-block: 0.75em;
-    line-height: 1.25;
-    text-wrap: balance;
-    letter-spacing: -0.05ch;
-  }
-
-  p&, ol&, ul& {
-    margin-block: 1em;
-  }
-
-  ol&, ul& {
-    padding-inline-start: 1.5em;
-    list-style: revert;
-  }
-
-  li& {
-    margin-block: 0.5em;
-  }
+.row {
+  margin: 0;
 }
 
 /* CSS variables */
@@ -87,8 +71,4 @@ nav {
 .navbar-brand img {
   height: 3rem;
   margin-left: 1rem;
-}
-
-input {
-  display: block;
 }
