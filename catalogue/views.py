@@ -13,6 +13,16 @@ class CoffeeList(generic.ListView):
     template_name = "coffee_list.html"
     paginate_by = 16
 
+class CoffeeMyList(generic.ListView):
+    template_name = "coffee_list.html"
+    paginate_by = 16
+
+    def get_queryset(self):
+        # Access the currently logged-in user
+        user = self.request.user
+        # Filter Coffee objects for the current user and approved listings
+        return Coffee.objects.filter(listing_approved=True, vendor=user)
+        
 
 
 def coffee_detail(request, product_ID):
