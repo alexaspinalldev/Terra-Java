@@ -10,7 +10,7 @@ Visitors can filter the coffees by attibutes - region, bitterness, bean (Arabica
 ## UX Design Process
 
 ### Graphic design and visual assets:
-[Selected colour pallate](https://coolors.co/432818-34623f-ffa500-c1b098-e7dfc9)
+[Selected colour pallate](https://coolors.co/4f3221-34623f-ffee7d-c1b098-ffffff)
 
 Logo:<br>
 <img src="static/images/tj-logo.png" style="border: 1px solid white; padding: 10px; width: 50%"></img>
@@ -22,7 +22,7 @@ Image credits:<br>
 
 [PROJETO CAFÉ GATO-MOURISCO](https://unsplash.com/@projetocafegatomourisco?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-lush-green-hillside-covered-in-lots-of-trees-zOVRgigQMQA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
-[Yogendra Singh on Pexels](https://www.pexels.com/video/drone-footage-of-rice-terraces-on-a-hill-10982929/).
+[Nitin Khajotia on Pexels](https://www.pexels.com/video/a-view-of-a-lush-green-valley-with-mountains-in-the-background-19669269/)
 
 ### User flow and ERD
   - [Link to Miro](https://miro.com/app/board/uXjVLuC7tmQ=/?share_link_id=877125417995)
