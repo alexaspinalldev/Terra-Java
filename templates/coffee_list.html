@@ -23,15 +23,15 @@
       {% for coffee in object_list %}
       <div class="col-12 col-md-3 mb-3">
           <div class="card">
-              <div class="card-top">
               <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
+                <div class="card-top">
                 {% if "default" in coffee.product_image.url %}
-                <img class="card-img-top" src="{% static 'images/coffee-beans.webp' %}" alt="default image">
+                <img class="" src="{% static 'images/coffee-beans.webp' %}" alt="default image">
                 {% else %}
-                <img class="card-img-top" src="{{ coffee.product_image.url }}" alt="{{ coffee.coffee_name }}">
+                <img class="" src="{{ coffee.product_image.url }}" alt="{{ coffee.coffee_name }}">
                 {% endif %}
+              </div>
               </a>
-          </div>
               <div class="card-body text-center">
                   <h2 class="h6 m-0">
                       <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>

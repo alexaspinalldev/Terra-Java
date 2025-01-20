@@ -25,27 +25,45 @@ h1 {
 }
 
 .card {
-    background-color: var(--secondary-color);
     overflow: hidden;
     /* display: flex;
     flex-direction: column; */
     height: 100%;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 0;
 }
 
 .card-top {
     overflow: hidden;
+    aspect-ratio: 4/2.5;
+    position: relative;
 }
 
-.card-top a img {
+.card-top img {
     transition: transform 1s ease-out;
+    width: 100%;
 }
 
-.card-top a img:hover {
+.card-top:after {
+    background: radial-gradient(closest-side, rgba(255,255,255,0) 95%, rgba(255,255,255,1) 100%);
+    content: '';
+    display: block;
+    height: calc(100% + 1px);
+    position: absolute;
+    top: 0;
+    width: calc(100% + 1px);
+  }
+
+  .card-top:after img:hover {
     transform: scale(1.05);
 }
 
 .card-body {
     font-style: italic;
+    border-radius: 50px;
+    margin-top: 10px;
+    background-color: var(--secondary-color);
 }
 
 .bean-icon {
