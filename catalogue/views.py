@@ -55,7 +55,7 @@ def coffee_add(request):
     view to add a new coffee listing. The button is only visible to authenticated users.
     """
     if request.method == "POST":
-        coffee_to_add = CoffeeAdd(data=request.POST)
+        coffee_to_add = CoffeeAdd(data=request.POST, files=request.FILES)
 
         if coffee_to_add.is_valid():
             coffee = coffee_to_add.save(commit=False)
@@ -82,7 +82,7 @@ def coffee_edit(request, product_ID):
     if request.method == "POST":
         queryset = Coffee.objects
         coffee = get_object_or_404(queryset, product_ID=product_ID)
-        coffee_update = CoffeeUpdate(data=request.POST)
+        coffee_update = CoffeeUpdate(data=request.POST, files=request.FILES)
         editingVendor = coffee.vendor
         idToUpdate = product_ID
         existingCreated_at = coffee.created_at
