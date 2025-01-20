@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User as Vendor
+from cloudinary.models import CloudinaryField
+
 
 BEAN_CHOICES = [
     ('arabica', 'Arabica'),
@@ -20,7 +22,7 @@ class Coffee(models.Model):
     taste_profile = models.CharField(max_length=255)
     roast = models.CharField(choices=ROAST_LEVELS)
     description = models.TextField()
-    # image = models.ImageField(upload_to='coffee_images/', blank=True, null=True)
+    product_image = CloudinaryField('image', default='placeholder')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     listing_approved = models.BooleanField(default=False)

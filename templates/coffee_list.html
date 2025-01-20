@@ -25,12 +25,12 @@
           <div class="card">
               <div class="card-top">
               <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
-              <!-- {#% if "" in coffee.image.url %#} -->
-              <img class="card-img-top" src="{% static 'images/coffee-beans.webp' %}" alt="placeholder image">
-              <!-- {#% else %#}
-                          <img class="card-img-top" src=" {{ coffee.image.url }}"
-                            alt="{{ coffee.coffee_name }}">
-                  {#% endif %#} -->
+                {% if "default" in post.featured_image.url %}
+                <img class="card-img-top" src="{% static 'images/coffee-beans.webp' %}" alt="default image">
+                {% else %}
+                <img class="card-img-top" src=" {{ coffee.product_image.url }}"
+                  alt="{{ coffee.coffee_name }}">
+              {% endif %}
               </a>
           </div>
               <div class="card-body text-center">
