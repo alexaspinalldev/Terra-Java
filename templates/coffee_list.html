@@ -2,53 +2,57 @@
 {% load static %}
 
 {% block content %}
-<div class="row">
-  <div class="d-none d-md-block col-md-2 pt-5 px-3" id="sidebar">
+<div class="d-flex">
+  <div class="d-none d-md-block col-md-auto pt-5 px-3" id="sidebar">
+    <div id="sidebarContent">
     <h2 class="h4">Filter results:</h2>
     {% if user.is_authenticated %}
       <label for="yourCoffees">Show only your listings:</label>
       <input id="yourCoffees" name="yourCoffees" type="checkbox" onchange="if(this.checked) document.location.href='mylistings/'; else document.location.href='/catalogue'"/>
       {% endif %}
+    </div>
   </div>
-  <div class="col-12 col-md-10">
-    <div class="px-5 pb-3 pt-4 d-flex justify-content-between">
-      <h1 class="m-0">Browse Coffees</h1>
-      <div class="nav-buttons">
-          {% if user.is_authenticated %}
-          <button type="button" class="btn btn-dark" id="addBtn">Add new coffee listing</button>
-          {% endif %}
-      </div>
-  </div>
-  <div class="row px-3">
-      {% for coffee in object_list %}
-      <div class="col-12 col-md-3 mb-3">
-          <div class="card">
-              <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
-                <div class="card-top">
-                {% if "default" in coffee.product_image.url %}
-                <img class="" src="{% static 'images/coffee-beans.webp' %}" alt="default image">
-                {% else %}
-                <img class="" src="{{ coffee.product_image.url }}" alt="{{ coffee.coffee_name }}">
-                {% endif %}
-              </div>
-              </a>
-              <div class="card-body text-center">
-                  <h2 class="h6 m-0">
-                      <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
-                      {{coffee.coffee_name}} | <img src="{% static 'images/coffee-bean.svg' %}" alt="coffee bean icon" class="bean-icon"></img> {{coffee.bean}}
-                      <br><br>
-                      {{coffee.vendor.first_name}} | {{coffee.origin}}
-                      </a>
-                  </h2>
-              </div>
-          </div>
-      </div>
-      {% if forloop.counter|divisibleby:4 %}
-  </div>
-  <div class="row mb-3 px-3">
-      {% endif %}
-      {% endfor %}
-  </div>
+  <div>
+    <div class="col-12">
+      <div class="px-5 pb-3 pt-4 d-flex justify-content-between">
+        <h1 class="m-0">Browse Coffees</h1>
+        <div class="nav-buttons">
+            {% if user.is_authenticated %}
+            <button type="button" class="btn btn-dark" id="addBtn">Add new coffee listing</button>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row px-3">
+        {% for coffee in object_list %}
+        <div class="col-12 col-md-3 mb-3">
+            <div class="card">
+                <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
+                  <div class="card-top">
+                  {% if "default" in coffee.product_image.url %}
+                  <img class="" src="{% static 'images/coffee-beans.webp' %}" alt="default image">
+                  {% else %}
+                  <img class="" src="{{ coffee.product_image.url }}" alt="{{ coffee.coffee_name }}">
+                  {% endif %}
+                </div>
+                </a>
+                <div class="card-body text-center">
+                    <h2 class="h6 m-0">
+                        <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
+                        {{coffee.coffee_name}} | <img src="{% static 'images/coffee-bean.svg' %}" alt="coffee bean icon" class="bean-icon"></img> {{coffee.bean}}
+                        <br><br>
+                        {{coffee.vendor.first_name}} | {{coffee.origin}}
+                        </a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:4 %}
+    </div>
+    <div class="row mb-3 px-3">
+        {% endif %}
+        {% endfor %}
+    </div>
+    </div>
   </div>
 </div>
 

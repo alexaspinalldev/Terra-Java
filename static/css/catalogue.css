@@ -18,6 +18,10 @@ nav {
     background-color: var(--secondary-color);
 }
 
+#sidebarContent {
+    /* position: fixed; */
+}
+
 h1 {
     color: var(--heading-color);
 }
@@ -67,6 +71,7 @@ h1 {
     font-style: italic;
     border-radius: 50px;
     margin-top: 12px;
+    margin-bottom: 5px;
     background-color: var(--secondary-color);
 }
 
