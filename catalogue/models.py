@@ -22,7 +22,7 @@ class Coffee(models.Model):
     taste_profile = models.CharField(max_length=255)
     roast = models.CharField(choices=ROAST_LEVELS)
     description = models.TextField()
-    product_image = CloudinaryField('image', default='placeholder')
+    product_image = CloudinaryField('image', default='default')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     listing_approved = models.BooleanField(default=False)

@@ -8,12 +8,12 @@ from django.utils.translation import gettext_lazy as _
 class CoffeeAdd(forms.ModelForm):
     class Meta:
         model = Coffee
-        fields = ('coffee_name', 'origin', 'bean', 'taste_profile', 'roast', 'description')
+        fields = ('coffee_name', 'origin', 'bean', 'taste_profile', 'roast', 'description', 'product_image')
 
 class CoffeeUpdate(forms.ModelForm):
     class Meta:
         model = Coffee
-        fields = ('coffee_name', 'origin', 'bean', 'taste_profile', 'roast', 'description')
+        fields = ('coffee_name', 'origin', 'bean', 'taste_profile', 'roast', 'description', 'product_image')
 
 # Extend SIGNUP FORM
 class CustomSignupForm(SignupForm):
