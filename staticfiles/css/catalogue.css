@@ -14,10 +14,6 @@ nav {
     margin-left: 1rem;
 }
 
-#sidebar {
-    background-color: var(--secondary-color);
-}
-
 h1 {
     color: var(--heading-color);
 }
@@ -58,21 +54,23 @@ h1 {
     margin: -1px;
 }
 
-.alertparent {
-    position: absolute;
+/* .alertparent {
     width: 100%;
     display: grid;
     align-items: center;
     justify-content: center;
-    top: 4rem;
-}
+} */
 
 .alert {
+    position: absolute;
     border: 2px solid var(--heading-color);
     width: fit-content;
     z-index: 1050;
     background-color: white;
     margin: 0;
+    top: 4rem;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .success {
