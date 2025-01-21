@@ -6,7 +6,7 @@
   <a id="back" href="/catalogue/">&laquo; Back</a>
 </div>
 <div class="row">
-  <div class="col-12 col-md-4" id="product-main">
+  <div class="col-12 col-md-4 d-flex justify-content-center" id="product-main">
     {% if "default" in coffee.product_image.url %}
     <img class="card-img-top" src="{% static 'images/coffee-beans.webp' %}" alt="default image">
     {% else %}
