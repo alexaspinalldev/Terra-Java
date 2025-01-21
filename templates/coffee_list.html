@@ -3,133 +3,141 @@
 
 {% block content %}
 <div class="d-flex">
-  <div class="d-none d-md-block col-md-auto pt-5 px-3" id="sidebar">
-    <div id="sidebarContent">
-    <h2 class="h4">Filter results:</h2>
-    {% if user.is_authenticated %}
+  <div class="col-md-auto px-3 offcanvas offcanvas-start" id="sidebar">
+    <div id="sidebarContent" class="pt-4">
+      <div id="sidebarHeader">
+        <h2 class="h4">Filter results:</h2>
+        <button type="button" class="ms-auto btn btn-dark" data-bs-target="#sidebar" data-bs-toggle="collapse"
+          aria-label="Close" style="height: min-content;"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      {% if user.is_authenticated %}
       <label for="yourCoffees">Show only your listings:</label>
-      <input id="yourCoffees" name="yourCoffees" type="checkbox" onchange="if(this.checked) document.location.href='mylistings/'; else document.location.href='/catalogue'"/>
+      <input id="yourCoffees" name="yourCoffees" type="checkbox"
+        onchange="if(this.checked) document.location.href='mylistings/'; else document.location.href='/catalogue'" />
       {% endif %}
     </div>
   </div>
   <div>
     <div class="col-12">
-      <div class="px-5 pb-3 pt-4 d-flex justify-content-between">
+      <div class="px-5 pb-3 pt-4 d-flex justify-content-between align-items-center">
         <h1 class="m-0">Browse Coffees</h1>
-        <div class="nav-buttons">
-            {% if user.is_authenticated %}
-            <button type="button" class="btn btn-dark" id="addBtn">Add new coffee listing</button>
-            {% endif %}
+        <button data-bs-target="#sidebar" data-bs-toggle="collapse" class="btn btn-outline-dark ms-3"
+          style="height: min-content;"><i class="fa-solid fa-filter"></i> Filter</button>
+        <div class="nav-buttons ms-auto">
+          {% if user.is_authenticated %}
+          <button type="button" class="btn btn-dark" id="addBtn">Add new coffee listing</button>
+          {% endif %}
         </div>
-    </div>
-    <div class="row px-3">
+      </div>
+      <div class="row px-3">
         {% for coffee in object_list %}
         <div class="col-12 col-md-3 mb-3">
-            <div class="card">
+          <div class="card">
+            <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
+              <div class="card-top">
+                {% if "default" in coffee.product_image.url %}
+                <img class="" src="{% static 'images/coffee-beans.webp' %}" alt="default image">
+                {% else %}
+                <img class="" src="{{ coffee.product_image.url }}" alt="{{ coffee.coffee_name }}">
+                {% endif %}
+              </div>
+            </a>
+            <div class="card-body text-center">
+              <h2 class="h6 m-0">
                 <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
-                  <div class="card-top">
-                  {% if "default" in coffee.product_image.url %}
-                  <img class="" src="{% static 'images/coffee-beans.webp' %}" alt="default image">
-                  {% else %}
-                  <img class="" src="{{ coffee.product_image.url }}" alt="{{ coffee.coffee_name }}">
-                  {% endif %}
-                </div>
+                  {{coffee.coffee_name}} | <img src="{% static 'images/coffee-bean.svg' %}" alt="coffee bean icon"
+                    class="bean-icon"></img> {{coffee.bean}}
+                  <br><br>
+                  {{coffee.vendor.first_name}} | {{coffee.origin}}
                 </a>
-                <div class="card-body text-center">
-                    <h2 class="h6 m-0">
-                        <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
-                        {{coffee.coffee_name}} | <img src="{% static 'images/coffee-bean.svg' %}" alt="coffee bean icon" class="bean-icon"></img> {{coffee.bean}}
-                        <br><br>
-                        {{coffee.vendor.first_name}} | {{coffee.origin}}
-                        </a>
-                    </h2>
-                </div>
+              </h2>
             </div>
+          </div>
         </div>
         {% if forloop.counter|divisibleby:4 %}
-    </div>
-    <div class="row mb-3 px-3">
+      </div>
+      <div class="row mb-3 px-3">
         {% endif %}
         {% endfor %}
-    </div>
+      </div>
     </div>
   </div>
 </div>
 
 {% if is_paginated %}
 <nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center mt-auto py-2">
-        {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-dark"> &laquo; Previous</a></li>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-dark">Next &raquo;</a></li>
-        {% endif %}
-    </ul>
+  <ul class="pagination justify-content-center mt-auto py-2">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-dark"> &laquo; Previous</a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-dark">Next &raquo;</a></li>
+    {% endif %}
+  </ul>
 </nav>
 {% endif %}
 
 <div class="modal" id="loadingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" inert>
-    <div class="modal-dialog modal-dialog-centered">
-        <img src="{% static 'images/tj-logo-light.png' %}" alt="Please wait while your request loads" style="width: 100%;">
-    </div>
+  <div class="modal-dialog modal-dialog-centered">
+    <img src="{% static 'images/tj-logo-light.png' %}" alt="Please wait while your request loads" style="width: 100%;">
+  </div>
 </div>
 
 <!-- Add modal -->
 <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addModalLabel">Add new coffee</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form method="POST" action="add/" enctype="multipart/form-data">
-          {% csrf_token %}
-          <div class="modal-body">
-            <!-- Coffee Name -->
-            <label for="coffee_name">Coffee Name:</label>
-            <input type="text" id="coffee_name" name="coffee_name" maxlength="255" required>
-            <!-- Origin -->
-            <label for="origin">Origin (Country):</label>
-            <input type="text" id="origin" name="origin" maxlength="100" required>
-            <!-- Bean Type -->
-            <label for="bean">Bean Type:</label>
-            <select id="bean" name="bean" required>
-              <option value="arabica">Arabica</option>
-              <option value="excelsa">Excelsa</option>
-              <option value="robusta">Robusta</option>
-              <option value="liberica">Liberica</option>
-            </select>
-            <!-- Taste Profile -->
-            <label for="taste_profile">Taste Profile:</label>
-            <input type="text" id="taste_profile" name="taste_profile" maxlength="255" required>
-            <!-- Roast Level -->
-            <label for="roast">Roast Level:</label>
-            <select id="roast" name="roast" required>
-              <option value="light">Light</option>
-              <option value="medium">Medium</option>
-              <option value="dark">Dark</option>
-            </select>
-            <!-- Description -->
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" rows="5" cols="40" required></textarea>
-            <!-- Image -->
-            <label for="product_image">Product image:</label>
-            <input type="file" id="product_image" name="product_image" accept="image/*">
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-dark">Submit</button>
-        </form>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addModalLabel">Add new coffee</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form method="POST" action="add/" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="modal-body">
+          <!-- Coffee Name -->
+          <label for="coffee_name">Coffee Name:</label>
+          <input type="text" id="coffee_name" name="coffee_name" maxlength="255" required>
+          <!-- Origin -->
+          <label for="origin">Origin (Country):</label>
+          <input type="text" id="origin" name="origin" maxlength="100" required>
+          <!-- Bean Type -->
+          <label for="bean">Bean Type:</label>
+          <select id="bean" name="bean" required>
+            <option value="arabica">Arabica</option>
+            <option value="excelsa">Excelsa</option>
+            <option value="robusta">Robusta</option>
+            <option value="liberica">Liberica</option>
+          </select>
+          <!-- Taste Profile -->
+          <label for="taste_profile">Taste Profile:</label>
+          <input type="text" id="taste_profile" name="taste_profile" maxlength="255" required>
+          <!-- Roast Level -->
+          <label for="roast">Roast Level:</label>
+          <select id="roast" name="roast" required>
+            <option value="light">Light</option>
+            <option value="medium">Medium</option>
+            <option value="dark">Dark</option>
+          </select>
+          <!-- Description -->
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" rows="5" cols="40" required></textarea>
+          <!-- Image -->
+          <label for="product_image">Product image:</label>
+          <input type="file" id="product_image" name="product_image" accept="image/*">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-dark">Submit</button>
+      </form>
     </div>
   </div>
-  </div>
+</div>
+</div>
 
-  <!-- Loading animation -->
+<!-- Loading animation -->
 <script defer src="{% static 'js/loading.js' %}">
 </script>
-  
-  <!-- CRUD URLS -->
+
+<!-- CRUD URLS -->
 <script defer src="{% static 'js/listing-add.js' %}">
 </script>
 
