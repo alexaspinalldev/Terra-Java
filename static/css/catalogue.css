@@ -169,6 +169,15 @@ a .card-top img:hover {
     color: var(--tertiary-color);
 }
 
+#product-main {
+}
+
+#product-main img {
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
 
 /* ------------------------------ Login/Logout/Signup ------------------------------ */
 .logout-image {
