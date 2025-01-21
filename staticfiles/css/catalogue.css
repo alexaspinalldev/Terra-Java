@@ -7,6 +7,7 @@ nav {
 #topNav {
     /* box-shadow: inset  0 -8px 8px -8px #626262; */
     box-shadow:  0 0 8px #626262;
+    z-index: 1050;
 }
   
 .navbar-brand img {
@@ -16,6 +17,17 @@ nav {
 
 #sidebar {
     background-color: var(--secondary-color);
+    width: 10%;
+    min-width: 300px;
+    padding-top: 74px;
+}
+
+#sidebarHeader{
+    display: flex;
+}
+
+#sidebarContent {
+    /* position: fixed; */
 }
 
 h1 {
@@ -29,27 +41,58 @@ h1 {
 }
 
 .card {
-    background-color: var(--secondary-color);
     overflow: hidden;
     /* display: flex;
     flex-direction: column; */
     height: 100%;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 0;
+    animation: scroll-fade linear both;
+    animation-timeline: view();
+    animation-range: entry 0% contain 5%;
+}
+
+@keyframes scroll-fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .card-top {
     overflow: hidden;
+    aspect-ratio: 4/2.5;
+    border-radius: 7px;
 }
 
-.card-top a img {
+.card-top img {
     transition: transform 1s ease-out;
+    width: 100%;
 }
 
-.card-top a img:hover {
+/* .card-top:after {
+    background: radial-gradient(closest-side, rgba(255,255,255,0) 95%, rgba(255,255,255,1) 100%);
+    content: '';
+    display: block;
+    height: calc(100% + 2px);
+    position: absolute;
+    top: 0;
+    width: calc(100% + 2px);
+  } */
+
+  a .card-top img:hover {
     transform: scale(1.05);
 }
 
 .card-body {
     font-style: italic;
+    border-radius: 50px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    background-color: var(--secondary-color);
 }
 
 .bean-icon {
@@ -69,12 +112,13 @@ h1 {
     position: absolute;
     border: 2px solid var(--heading-color);
     width: fit-content;
-    z-index: 1050;
+    z-index: 1060;
     background-color: white;
     margin: 0;
     top: 4rem;
     left: 50%;
     transform: translate(-50%, 0);
+    box-shadow:  0 0 8px #626262;
 }
 
 .success {

@@ -45,7 +45,7 @@
             <div class="card-body text-center">
               <h2 class="h6 m-0">
                 <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
-                  {{coffee.coffee_name}} | <img src="{% static 'images/coffee-bean.svg' %}" alt="coffee bean icon"
+                <strong>{{coffee.coffee_name}}</strong> | <img src="{% static 'images/coffee-bean.svg' %}" alt="coffee bean icon"
                     class="bean-icon"></img> {{coffee.bean}}
                   <br><br>
                   {{coffee.vendor.first_name}} | {{coffee.origin}}
