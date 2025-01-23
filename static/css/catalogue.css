@@ -15,6 +15,11 @@ nav {
     margin-left: 1rem;
 }
 
+#sidebar-btn:hover svg {
+    fill: #FFF;
+    stroke: #FFF;
+}
+
 #sidebar {
     background-color: var(--secondary-color);
     width: 10%;
