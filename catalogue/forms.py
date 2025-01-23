@@ -17,8 +17,7 @@ class CoffeeUpdate(forms.ModelForm):
 
 # Extend SIGNUP FORM
 class CustomSignupForm(SignupForm):
-    first_name = forms.CharField(
-        max_length=30,
+    first_name = forms.CharField(max_length=30,
         label=_("Your company"),
         required=True,
         widget=forms.TextInput(attrs={"placeholder": _("Coffee Company Ltd")}),
