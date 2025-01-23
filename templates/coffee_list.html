@@ -22,7 +22,7 @@
       <div class="px-5 pb-3 pt-4 d-flex justify-content-between align-items-center">
         <h1 class="m-0">Browse Coffees</h1>
         <button data-bs-target="#sidebar" data-bs-toggle="collapse" class="btn btn-outline-dark ms-3"
-          style="height: min-content;"><i class="fa-solid fa-filter"></i> Filter</button>
+          style="height: min-content;"><img src="{% static 'images/coffee-pot-svgrepo-com.svg' %}" style="height: 1rem;" alt="Filter coffee icon"> Filter</button>
         <div class="nav-buttons ms-auto">
           {% if user.is_authenticated %}
           <button type="button" class="btn btn-dark" id="addBtn">Add new coffee listing</button>
