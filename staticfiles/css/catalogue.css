@@ -31,10 +31,6 @@ nav {
     display: flex;
 }
 
-#sidebarContent {
-    /* position: fixed; */
-}
-
 h1 {
     color: var(--heading-color);
 }
@@ -172,9 +168,6 @@ a .card-top img:hover {
     text-align: center;
     font-style: italic;
     color: var(--tertiary-color);
-}
-
-#product-main {
 }
 
 #product-main img {
