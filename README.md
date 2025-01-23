@@ -13,7 +13,7 @@ Visitors can filter the coffees by attibutes - region, bitterness, bean (Arabica
 [Selected colour pallate](https://coolors.co/4f3221-34623f-ffee7d-c1b098-ffffff)
 
 Logo:<br>
-<img src="static/images/tj-logo.png" style="border: 1px solid white; padding: 10px; width: 50%"></img>
+<img src="static/images/tj-logo.webp" style="border: 1px solid white; padding: 10px; width: 50%"></img>
 
 Image credits:<br>
 [Ashlyn Ciara](https://unsplash.com/@ashlynciara?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-man-in-a-hat-picking-berries-from-a-bush-4rbWwrtMQ1c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
