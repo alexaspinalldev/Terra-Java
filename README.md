@@ -35,29 +35,29 @@ Image credits:<br>
 <img src="static/images/README/Catalogue.png" style="width: 33%"></img>
 <img src="static/images/README/CoffeeDetail.png" style="width: 33%"></img>
     
-- **Design Rationale:**
-  - [Explain key design decisions, such as layout, colour scheme, typography, and how accessibility guidelines (e.g., WCAG) were integrated.]
-  - [Highlight any considerations made for users with disabilities, such as screen reader support.]
- 
-- **Reasoning For Any Final Changes:**
-  - [Summarise significant changes made to the design during development and the reasons behind them.]
-  - [Reflect on how these changes enhance inclusivity and accessibility.]
+        - **Design Rationale:**
+          - [Explain key design decisions, such as layout, colour scheme, typography, and how accessibility guidelines (e.g., WCAG) were integrated.]
+          - [Highlight any considerations made for users with disabilities, such as screen reader support.]
+        
+        - **Reasoning For Any Final Changes:**
+          - [Summarise significant changes made to the design during development and the reasons behind them.]
+          - [Reflect on how these changes enhance inclusivity and accessibility.]
 
-## Key Features
-- **Feature 1:** [Briefly describe the implemented feature.]
-- **Feature 2:** [Briefly describe the implemented feature.]
-- **Inclusivity Notes:** 
-  - [Mention how the features address the needs of diverse users, including those with SEND.]
+        ## Key Features
+        - **Feature 1:** [Briefly describe the implemented feature.]
+        - **Feature 2:** [Briefly describe the implemented feature.]
+        - **Inclusivity Notes:** 
+          - [Mention how the features address the needs of diverse users, including those with SEND.]
 
 ## Deployment
 - **Platform:** Heroku
 - **High-Level Deployment Steps:** 
-  1. [Step 1]
-  2. [Step 2]
-  3. [Step 3]
+  1. Ensure project is set correctly for deployment
+  2. Push code to Github
+  3. Deploy from main in Heroku dashboard
 - **Verification and Validation:**
-  - Steps taken to verify the deployed version matches the development version in functionality.
-  - [Include any additional checks to ensure accessibility of the deployed application.]
+  - All CRUD operations were retested manually in the deployed version. Often this was faster for making DB changes than spooling up the local server.
+
 - **Security Measures:**
   - Use of environment variables for sensitive data.
   - Ensured DEBUG mode is disabled in production.
@@ -70,16 +70,16 @@ Image credits:<br>
     - AI was also used to expand the user stories from the initial prompt describing the site's functions.
        
   - **Content:** 
-    - Once the ERD was complete, GPT was used to create a JSON import scripts for the lists of Vendors and Coffees.
+    - Once the ERD was complete, GPT was used to create a JSON import scripts for the lists of Vendors and Coffees. Later I also had it create Python shell scripts to add field data such as vendor.about to the existng database.
 
   - **Code Creation:** 
-    - GPT was used to cross-examine my proposed ERD, suggesting new fields, and then create the model objects.
+    - GPT was used to cross-examine my proposed ERD, suggesting new fields, and then create the model objects. I also used it to suggest improvements to my client javascript, such as in the "loading modal" where I had it add a condition for users ctrl+clicking on the triggering links.
 
   - **Debugging:** 
-    - Reflection: Key interventions included resolving logic errors and enhancing maintainability, with a focus on simplifying complex logic to make it accessible.
+    - GPT was utilised lightly to fix initial issues with my views, and also to troubleshoot issues with my DTL variables and static files not being found.
 
   - **Performance and UX Optimization:** 
-    - Reflection: Minimal manual adjustments were needed to apply AI-driven improvements, which enhanced application speed and user experience for all users.
+    - AI was not used for this purpose
 
   - **Automated Unit Testing:**
     - Reflection: Adjustments were made to improve test coverage and ensure alignment with functionality. Prompts were used to generate inclusive test cases that considered edge cases for accessibility.
@@ -91,14 +91,23 @@ Image credits:<br>
 
 ## Testing Summary
 - **Manual Testing:**
-  - **Devices and Browsers Tested:** [List devices and browsers, ensuring testing was conducted with assistive technologies such as screen readers or keyboard-only navigation.]
-  - **Features Tested:** [Summarise features tested manually, e.g., CRUD operations, navigation.]
-  - **Results:** [Summarise testing results, e.g., "All critical features worked as expected, including accessibility checks."]
+  - **Devices and Browsers Tested:** Tested manually on desktop and mobile devices
+  - **Features Tested:** Signing up, logging in and out, adding, editing and removing Coffee listing fucntions were tested manually on all devices.
+  - **Results:** Mobile testing revealed a few bugs including stretched images and some specific restrictions on iOS around video autoplaying. This later issue was resolved by checking the Apple documentation on the subject.
 - **Automated Testing:**
-  - Tools Used: [Mention any testing frameworks or tools, e.g., Django TestCase.]
-  - Features Covered: [Briefly list features covered by automated tests.]
-  - Adjustments Made: [Describe any manual corrections to AI-generated test cases, particularly for accessibility.]
+  - Tools Used: Django Test
+  - Features Covered: CoffeeAdd, CoffeeUpdate and SignUp forms were tested using automated test cases. I had issues doing this using class-based test so I instead opted to test through the Python Shell. AI suggested this alternative approach. I could not get Automated view testing working unfortunately so had to rely on manual testing results.
+  - Adjustments Made: On my Coffee model, I had neglected to include the mandatory "max_length" attribute on my choice field. Resolving this allowed my form tests to pass.
+- **Validation:**
+  - **HTML:**
+  - **CSS:**
+  - **JS:**
+
 
 ## Future Enhancements
-- Users can register and leave reviews on coffee roasts where they comment and rate the coffee on different metrics.
-- Add a webstore component to the site.
+- Add more explicit view to Vendors of their listings that are unapproved, rather than filtering those out for all users
+- Add greater sidebar filtering options
+- Add a more appropriate homepage than just launchng straight into the catalogue
+- Add a webstore app to the site
+- Add the ability to contact vendors
+- Add the ability to leave reviews for the coffees
