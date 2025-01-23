@@ -55,7 +55,7 @@ h1 {
     border-radius: 0;
     animation: scroll-fade linear both;
     animation-timeline: view();
-    animation-range: entry 0% contain 5%;
+    animation-range: entry 0% contain 8%;
 }
 
 @keyframes scroll-fade {
@@ -77,8 +77,8 @@ h1 {
 
 .card-top img {
     transition: transform 1s ease-out;
-    max-height: auto;
-    max-width: auto;
+    height: auto;
+    width: auto;
 }
 
 a .card-top img:hover {
