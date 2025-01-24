@@ -31,8 +31,8 @@
       <li class="h6 m-0">Roast: {{coffee.roast}}</li>
     </ul>
     <div class="coffeeDesc p-2">
-      <p>{{coffee.description | linebreaks}}</p>
-      <p class="vendorAbout mt-5 px-5">"{{coffee.vendor.vendorabout.about}}"</p>
+      <div>{{coffee.description | linebreaks}}</div>
+      <div class="vendorAbout mt-5 px-5">"{{coffee.vendor.vendorabout.about}}"</div>
     </div> 
   </div>
 </div>
@@ -105,10 +105,10 @@
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
       </form>
     </div>
   </div>
-</div>
 </div>
 
 <!-- CRUD URLS -->
