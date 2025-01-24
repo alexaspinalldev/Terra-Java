@@ -22,7 +22,7 @@
       <div class="p-3 px-md-5 pb-md-3 pt-md-4 d-flex justify-content-between align-items-center">
         <h1 class="m-0">Browse Coffees</h1>
         <button data-bs-target="#sidebar" data-bs-toggle="collapse" id="sidebar-btn" class="btn btn-outline-dark mx-3"
-          style="height: min-content;"><object type="image/svg+xml" data="{% static 'images/coffee-pot-svgrepo-com.svg' %}" style="height: 1rem; display: inline;" alt="Filter coffee icon"></object> Filter</button>
+          style="height: min-content;"><object type="image/svg+xml" data="{% static 'images/coffee-pot-svgrepo-com.svg' %}" style="height: 1rem; display: inline;"></object> Filter</button>
         <div class="nav-buttons ms-auto">
           {% if user.is_authenticated %}
           <button type="button" class="btn btn-dark" id="addBtn">Add new coffee listing</button>
@@ -46,7 +46,7 @@
               <h2 class="h6 m-0">
                 <a href="{% url 'Coffee detail' coffee.product_ID %}" data-load>
                 <strong>{{coffee.coffee_name}}</strong> | <img src="{% static 'images/coffee-bean.svg' %}" alt="coffee bean icon"
-                    class="bean-icon"></img> {{coffee.bean}}
+                    class="bean-icon"> {{coffee.bean}}
                   <br><br>
                   {{coffee.vendor.first_name}} | {{coffee.origin}}
                 </a>
@@ -129,6 +129,7 @@
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
       </form>
     </div>
   </div>
