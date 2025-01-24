@@ -6,15 +6,17 @@ Terra Java is a boutique catalogue of all the world's finest coffee blends. Taki
 Vendors are able to register themselves on the site and upload, edit and delete their coffees.
 Visitors can browse the listed coffees and get details on specific blends and vendors.
 
-This site was built as my Full Stack Capstone Project with Code Institute. It uses in Django.
+This site was built as my Full Stack Capstone Project with Code Institute. It uses the Django framework.
 
+[Link to deployed site](https://terra-java-9165cf0b75d7.herokuapp.com/)
+[Link to repository](https://github.com/alexaspinalldev/Terra-Java/)
 
 ## UX Design Process
 ### Graphic design and visual assets:
-[Selected colour pallate](https://coolors.co/4f3221-34623f-ffee7d-c1b098-ffffff)
+[Selected colour palette](https://coolors.co/4f3221-34623f-ffee7d-c1b098-ffffff)
 
 Logo:<br>
-<img src="static/images/tj-logo.webp" style="border: 1px solid white; padding: 10px; width: 50%"></img>
+<img src="static/images/tj-logo.webp" style="border: 1px solid white; padding: 10px; width: 40%"></img>
 
 Image credits:<br>
 [Ashlyn Ciara](https://unsplash.com/@ashlynciara?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-man-in-a-hat-picking-berries-from-a-bush-4rbWwrtMQ1c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
@@ -36,17 +38,14 @@ Image credits:<br>
 <img src="static/images/README/Catalogue.png" style="width: 33%"></img>
 <img src="static/images/README/CoffeeDetail.png" style="width: 33%"></img>
     
-- **Design Rationale:**
+### Design Rationale:
 - The core design of the site is based on similar simple webstore/catalogue sites. This was chosen in the interest of visual minimalism and the Jakob's Law principle. I added a simple landing page as a canvas to give the site more of an identity to follow the "exotic" nature of the brand.
 - I made a concious effort to lean into the Bootstrap defaults where possible with regards to things like font sizing, as in the past I have needlessly complicated my styling and slowed me down. One notable advantage of this is more appropriate use of HTML semantics, improving experience for users of screen readers.
-
-- **Reasoning For Any Final Changes:**
-- The primary change made early on was to drop the "webstore" component. This would have required another table, a new user class, order and payment screens, and was simply not practical to include with the time available.
 
 ## Key Features
 - **Filter by your listings:** Logged in Vendors can filter the list view to show only their listings. If they do not have any approved listings to show, Django will return a message to them confiming that this is not an error, rather than leaving simply a blank page.
 - **Coffee detail:** Clicking into a coffee listing displays summed information from both the "Coffee" and "Vendor" tables.
-- **Seamless:** Users can seamlessly register and add/edit/remove their listings without Admin login or involvement. At the moment all listings are approved by default but this is the only reason an admin would be required in day-to-day operations.
+- **Seamless UX:** Users can seamlessly register and add/edit/remove their listings without Admin login or involvement. At the moment all listings are approved by default but this is the only reason an admin would be required in day-to-day operations.
 
 ## Deployment
 - **Platform:** Heroku
@@ -90,15 +89,16 @@ Image credits:<br>
 ## Testing Summary
 - **Manual Testing:**
   - **Devices and Browsers Tested:** Tested manually on desktop and mobile devices
-  - **Features Tested:** Signing up, logging in and out, adding, editing and removing Coffee listing fucntions were tested manually on all devices.
+  - **Features Tested:** Signing up, logging in and out, adding, editing and removing Coffee listing functions were tested manually on all devices.
   - **Results:** Mobile testing revealed a few bugs including stretched images and some specific restrictions on iOS around video autoplaying. This later issue was resolved by checking the Apple documentation on the subject.
 - **Automated Testing:**
-  - Tools Used: Django Test
+  - Tools Used: Django's built-in testing framework
   - Features Covered: CoffeeAdd, CoffeeUpdate and SignUp forms were tested using automated test cases. I had issues doing this using class-based test so I instead opted to test through the Python Shell. AI suggested this alternative approach. I could not get Automated view testing working unfortunately so had to rely on manual testing results.
   - Adjustments Made: On my Coffee model, I had neglected to include the mandatory "max_length" attribute on my choice field. Resolving this allowed my form tests to pass.
 - **Validation:**
-  - **HTML:** All pages passed W3C Markup vlaidaiton checks with minimal changes. 
-  - **LightHouse:**
+All final validation and testing was performed on the deployed version of the site.
+  - **HTML:** All pages passed W3C Markup validation checks with minimal changes. 
+  - **LightHouse:** Lightouse testing was predictably harsh on the landing page due to the large video load. More efficiently serving this video will be a future enhancement. Other than that, all pages scroed 90+ on all Lighthouse metrics during both mobile and desktop emulations.
   - **CSS:** All CSS passed validation with no changes. There extant errors with the scrolling animation in "catalogue.css" but this contradicts Google's own scroll-driven-animations.style tool.
   - **JS:** All JS passed JSHint check with only a few missing semicolons to correct.
 
