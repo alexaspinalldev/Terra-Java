@@ -5,7 +5,6 @@ nav {
 }
 
 #topNav {
-    /* box-shadow: inset  0 -8px 8px -8px #626262; */
     box-shadow:  0 0 8px #626262;
     z-index: 1050;
 }
@@ -97,13 +96,6 @@ a .card-top img:hover {
     display: inline;
     margin: -1px;
 }
-
-/* .alertparent {
-    width: 100%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-} */
 
 .alert {
     position: absolute;
