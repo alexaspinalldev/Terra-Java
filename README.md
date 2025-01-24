@@ -4,11 +4,12 @@
 Terra Java is a boutique catalogue of all the world's finest coffee blends. Taking its name from the rich coffee fields found on the island of Java in western Indonesia, it aims to showcase the very best coffees from around the globe.
 
 Vendors are able to register themselves on the site and upload, edit and delete their coffees.
-Visitors can filter the coffees by attibutes - region, bitterness, bean (Arabica, Robusta, Liberica, and Excelsa)
+Visitors can browse the listed coffees and get details on specific blends and vendors.
+
+This site was built as my Full Stack Capstone Project with Code Institute. It uses in Django.
 
 
 ## UX Design Process
-
 ### Graphic design and visual assets:
 [Selected colour pallate](https://coolors.co/4f3221-34623f-ffee7d-c1b098-ffffff)
 
@@ -35,19 +36,17 @@ Image credits:<br>
 <img src="static/images/README/Catalogue.png" style="width: 33%"></img>
 <img src="static/images/README/CoffeeDetail.png" style="width: 33%"></img>
     
-        - **Design Rationale:**
-          - [Explain key design decisions, such as layout, colour scheme, typography, and how accessibility guidelines (e.g., WCAG) were integrated.]
-          - [Highlight any considerations made for users with disabilities, such as screen reader support.]
-        
-        - **Reasoning For Any Final Changes:**
-          - [Summarise significant changes made to the design during development and the reasons behind them.]
-          - [Reflect on how these changes enhance inclusivity and accessibility.]
+- **Design Rationale:**
+- The core design of the site is based on similar simple webstore/catalogue sites. This was chosen in the interest of visual minimalism and the Jakob's Law principle. I added a simple landing page as a canvas to give the site more of an identity to follow the "exotic" nature of the brand.
+- I made a concious effort to lean into the Bootstrap defaults where possible with regards to things like font sizing, as in the past I have needlessly complicated my styling and slowed me down. One notable advantage of this is more appropriate use of HTML semantics, improving experience for users of screen readers.
 
-        ## Key Features
-        - **Feature 1:** [Briefly describe the implemented feature.]
-        - **Feature 2:** [Briefly describe the implemented feature.]
-        - **Inclusivity Notes:** 
-          - [Mention how the features address the needs of diverse users, including those with SEND.]
+- **Reasoning For Any Final Changes:**
+- The primary change made early on was to drop the "webstore" component. This would have required another table, a new user class, order and payment screens, and was simply not practical to include with the time available.
+
+## Key Features
+- **Filter by your listings:** Logged in Vendors can filter the list view to show only their listings. If they do not have any approved listings to show, Django will return a message to them confiming that this is not an error, rather than leaving simply a blank page.
+- **Coffee detail:** Clicking into a coffee listing displays summed information from both the "Coffee" and "Vendor" tables.
+- **Seamless:** Users can seamlessly register and add/edit/remove their listings without Admin login or involvement. At the moment all listings are approved by default but this is the only reason an admin would be required in day-to-day operations.
 
 ## Deployment
 - **Platform:** Heroku
@@ -63,7 +62,6 @@ Image credits:<br>
   - Ensured DEBUG mode is disabled in production.
 
 ## AI Implementation and Orchestration
-
 ### Use Cases and Reflections:
   - **Site Ideation:**
     - The name of the site was picked from a list of keyword provided by ChatGPT. DALLE was used to create the logo.
