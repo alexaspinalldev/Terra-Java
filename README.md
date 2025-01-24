@@ -98,6 +98,7 @@ Image credits:<br>
   - Adjustments Made: On my Coffee model, I had neglected to include the mandatory "max_length" attribute on my choice field. Resolving this allowed my form tests to pass.
 - **Validation:**
   - **HTML:**
+  - **LightHouse:**
   - **CSS:**
   - **JS:**
 
