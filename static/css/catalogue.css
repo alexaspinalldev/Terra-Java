@@ -47,7 +47,7 @@ h1 {
     flex-direction: column; */
     height: 100%;
     border: 0;
-    box-shadow: 0;
+    box-shadow: none;
     border-radius: 0;
     animation: scroll-fade linear both;
     animation-timeline: view();
