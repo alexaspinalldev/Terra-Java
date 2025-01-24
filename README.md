@@ -97,10 +97,10 @@ Image credits:<br>
   - Features Covered: CoffeeAdd, CoffeeUpdate and SignUp forms were tested using automated test cases. I had issues doing this using class-based test so I instead opted to test through the Python Shell. AI suggested this alternative approach. I could not get Automated view testing working unfortunately so had to rely on manual testing results.
   - Adjustments Made: On my Coffee model, I had neglected to include the mandatory "max_length" attribute on my choice field. Resolving this allowed my form tests to pass.
 - **Validation:**
-  - **HTML:**
+  - **HTML:** All pages passed W3C Markup vlaidaiton checks with minimal changes. 
   - **LightHouse:**
-  - **CSS:**
-  - **JS:**
+  - **CSS:** All CSS passed validation with no changes. There extant errors with the scrolling animation in "catalogue.css" but this contradicts Google's own scroll-driven-animations.style tool.
+  - **JS:** All JS passed JSHint check with only a few missing semicolons to correct.
 
 
 ## Future Enhancements
