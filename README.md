@@ -65,6 +65,7 @@ Image credits:<br>
   - **Site Ideation:**
     - The name of the site was picked from a list of keyword provided by ChatGPT. DALLE was used to create the logo.
     - AI was also used to expand the user stories from the initial prompt describing the site's functions.
+    - Whilst my initial ERD was hand drawn in the planning stage, the final one linked above was generated using https://www.eraser.io/diagramgpt from my final model set. 
        
   - **Content:** 
     - Once the ERD was complete, GPT was used to create a JSON import scripts for the lists of Vendors and Coffees. Later I also had it create Python shell scripts to add field data such as vendor.about to the existng database.
