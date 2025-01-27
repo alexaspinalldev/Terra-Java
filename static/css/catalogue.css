@@ -166,6 +166,7 @@ a .card-top img:hover {
 }
 
 #product-main img {
+    object-fit: contain;
     height: auto;
     width: auto;
     max-height: 100%;
