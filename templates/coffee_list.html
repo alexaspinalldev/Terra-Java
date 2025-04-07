@@ -14,6 +14,8 @@
       <label for="yourCoffees">Show only your listings:</label>
       <input id="yourCoffees" name="yourCoffees" type="checkbox"
         onchange="if(this.checked) document.location.href='mylistings/'; else document.location.href='/catalogue'" />
+      {% else %}
+      <p>Please log in to see filter options</p>
       {% endif %}
     </div>
   </div>
