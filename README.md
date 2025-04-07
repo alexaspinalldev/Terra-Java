@@ -80,10 +80,10 @@ This site was built as my Full Stack Capstone Project with Code Institute. It us
     - AI was not used for this purpose.
 
   - **Automated Unit Testing:**
-    - AI was used to troubleshoot issued with testscripts, and provided me the workaround of using python shell commands to the same effect.
+    - AI was used to troubleshoot issueds with Django's built-in test framework, and provided me the workaround of using python shell commands to the same effect, which is an approach I found more flexible for the scope of this project.
 
 - **Overall Impact:**
-  - AI is an excellent tool for both generating codeblocks to save time, particularly markup, and also template content for the site's example database items. It is also extremely valuable for getting precise answers to nuanced troubleshooting situations.
+  - AI is an excellent tool for both generating codeblocks to save time, particularly markup, and also template content for the site's example database items. It is also extremely valuable for getting precise answers to nuanced troubleshooting situations. I found it an excellent aid in giving me snippets of code to review an adjust before adding them into the project.
 
 ## Testing Summary
 - **Manual Testing:**
@@ -104,7 +104,8 @@ All final validation and testing was performed on the deployed version of the si
 
 ## Future Enhancements
 - Add more explicit view to Vendors of their listings that are unapproved, rather than filtering those out for all users.
-- Add greater sidebar filtering options.
+- Add greater sidebar filtering options - this was outside the time limitations of this project.
+- Use more of AllAuth's social and magic link login capabilities.
 - Add a more appropriate homepage than just launchng straight into the catalogue.
 - Add a webstore app to the site.
 - Add the ability to contact vendors.
